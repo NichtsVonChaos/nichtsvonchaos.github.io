@@ -15,50 +15,37 @@ timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: Nihil                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: 丑新罢了   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  Nichts Hsu的个人博客
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://nichtsvonchaos.github.io'
 
-author: your_full_name                  # change to your full name
+author: Nichts Hsu                  # change to your full name
 
 github:
-  username: github_username             # change to your github username
+  username: NichtsVonChaos            # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: Still_Nihil            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: Nichts Hsu                  # it will shows as the copyright owner in Footer
+  email: NichtsVonChaos@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/Still_Nihil      # change to your twitter homepage
+    - https://github.com/NichtsVonChaos       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: google_meta_tag_verification # change to your verification string
+google_site_verification: dr-ktF8m84-3Bgb1D5faBkWAeXF_7FJYGuvyQFr9GXY # change to your verification string
 # --------------------------
-
-google_analytics:
-  id: ''          # Fill with your Google Analytics ID
-  pv:
-    # The Google Analytics pageviews switch.
-    # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
-    enabled: false
-    # the next options only valid when `google_analytics.pv` is enabled.
-    proxy_url: ''
-    proxy_endpoint: ''
-    cache: false  # pv data local cache, good for the users from GFW area.
 
 # Prefer color scheme setting.
 #
@@ -71,7 +58,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode:   # [light|dark]
+theme_mode: dark   # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -81,7 +68,7 @@ theme_mode:   # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/commons/avatar.jpg
+avatar: /avatar.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
