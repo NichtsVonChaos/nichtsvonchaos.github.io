@@ -2,7 +2,7 @@
 title: 记一次Manjaro下Grub炸裂的问题
 date: 2021-3-15 00:51:43 +0800
 categories: [Linux, Problem]
-tags: [manjaro]     # TAG names should always be lowercase
+tags: [manjaro, linux]     # TAG names should always be lowercase
 ---
 
 ## 问题的发生
