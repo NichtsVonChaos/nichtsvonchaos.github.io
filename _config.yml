@@ -58,7 +58,7 @@ google_site_verification: dr-ktF8m84-3Bgb1D5faBkWAeXF_7FJYGuvyQFr9GXY # change t
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark   # [light|dark]
+theme_mode:   # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
