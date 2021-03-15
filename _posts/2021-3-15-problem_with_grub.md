@@ -102,7 +102,39 @@ GRUB_DEFAULT=2
 
 难道是这个问题？这是个很离谱的想法，但是一筹莫展的我也就瞎猫碰上死耗子随缘试试了。`sudo update-grub`，重启、、、竟然开机了！
 
-我简直喜极而泣好吧。至于究竟是什么缘由，我已经没有力气去研究了。
+我简直喜极而泣好吧。不过还是没有grub页面直接进的系统。
+
+## 产生的原因
+
+找到问题点之后，我又仔细研究了一下/etc/default/grub，发现
+
+```sh
+GRUB_TIMEOUT_STYLE=hidden
+```
+
+原来不是没有grub，而是默认设置的隐藏界面，将其改为
+
+```sh
+GRUB_TIMEOUT_STYLE=menu
+```
+
+后显示grub。
+
+我之前修改
+
+```sh
+GRUB_DEFAULT=2
+```
+
+是基于在Ubuntu上的经验，第三个选项是Windows，但是我的manjaro没有识别到Windows的引导，第三个选项是BIOS设置，两者混合的结果就是导致grub默认进入BIOS，在不知情的情况下，就好像是grub崩溃了一样。
+
+向/etc/default/grub中写入
+
+```sh
+GRUB_DISABLE_OS_PROBER=false
+```
+
+后，`sudo update-grub`，重启，成功找到Windows。问题解决。
 
 ## 参考
 
