@@ -55,9 +55,9 @@ sudo mount --rbind /dev /mnt/dev/
 
 ### update-grub
 
-首先执行了`sudo update-grub`，显然事情没有这么简单就能解决。
+首先执行了`update-grub`，显然事情没有这么简单就能解决。
 
-再次尝试先`sudo grub-install /dev/sda4`（sda4是我的/boot分区，自己的分区用`sudo fdisk -l`查看），再`sudo update-grub`，无果。
+再次尝试先`grub-install /dev/sda4`（sda4是我的/boot分区，自己的分区用`fdisk -l`查看），再`update-grub`，无果。
 
 ### 重装内核
 
@@ -71,7 +71,7 @@ cp -L /etc/resolv.conf /mnt/etc/resolv.conf
 
 ```sh
 pacman -S linux
-sudo pacman -Syu
+pacman -Syu
 ```
 
 之后再`update-grub`，没有效果。
@@ -100,7 +100,7 @@ GRUB_DEFAULT=saved
 GRUB_DEFAULT=2
 ```
 
-难道是这个问题？这是个很离谱的想法，但是一筹莫展的我也就瞎猫碰上死耗子随缘试试了。`sudo update-grub`，重启、、、竟然开机了！
+难道是这个问题？这是个很离谱的想法，但是一筹莫展的我也就瞎猫碰上死耗子随缘试试了。`update-grub`，重启、、、竟然开机了！
 
 我简直喜极而泣好吧。不过还是没有grub页面直接进的系统。
 
@@ -134,7 +134,7 @@ GRUB_DEFAULT=2
 GRUB_DISABLE_OS_PROBER=false
 ```
 
-后，`sudo update-grub`，重启，成功找到Windows。问题解决。
+后，`update-grub`，重启，成功找到Windows。问题解决。
 
 ## 参考
 
