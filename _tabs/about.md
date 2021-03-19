@@ -24,5 +24,6 @@ order: 4
 * Discord：Nihil#4200
 * Bilibili：[-NIHIL-](https://space.bilibili.com/6631803)
 * 贴吧：[@towanoICIT](https://tieba.baidu.com/home/main?un=towanoICIT)（几乎弃用状态）
+* Steam：[Nihil](https://steamcommunity.com/id/NichtsHsu/)（来加个好友罢，我steam根本没几个好友（悲））
 
 大部分账号都是隔三差五看一次，很久才回复是很正常的。
