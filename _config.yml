@@ -58,6 +58,12 @@ google_analytics:
     proxy_endpoint: ''
     cache: false  # pv data local cache, good for the users from GFW area.
 
+valine:
+  comments: true
+  leancloud_appid: pXU63CAk1ftUy4K1z5rVAsUv-gzGzoHsz
+  leancloud_appkey: 429FlKi0XHmPfifc1nLHt4lR
+  placeholder: 说点什么吧！PS:在昵称栏输入QQ号可以自动获取QQ昵称和QQ头像哦~
+  avatar: 'mp'
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
