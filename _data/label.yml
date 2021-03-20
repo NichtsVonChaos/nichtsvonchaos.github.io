@@ -1,19 +1,19 @@
 # The label text of site.
 
 panel:
-  lastmod: Recent Update
-  trending_tags: Trending Tags
-  toc: Contents
+  lastmod: 最近更新
+  trending_tags: 热门标签
+  toc: 目录
 
 post:
-  relate_posts: Further Reading
-  share: Share
+  relate_posts: 接下来阅读
+  share: 分享
   button:
-    next: Newer
-    previous: Older
+    next: 下一篇
+    previous: 上一篇
 
-search_hint: Search   # text show on search bar
+search_hint: 搜索   # text show on search bar
 
-pin_prompt: Pinned    # pinned prompt
+pin_prompt: 置顶    # pinned prompt
 
-read_time_unit: min   # see posts' time to read
+read_time_unit: 分钟   # see posts' time to read

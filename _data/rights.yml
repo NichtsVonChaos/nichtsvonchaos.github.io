@@ -1,14 +1,13 @@
 #  License data
 
 # The year you first published your website, format: YYYY
-first_publication_year:   # e.g., 2021
+first_publication_year: 2021  # e.g., 2021
 
 license:
   name: CC BY 4.0
   link: "https://creativecommons.org/licenses/by/4.0/"
 
-brief: Some rights reserved.
+brief: 保留部分权利。
 
 verbose: >-
-  Except where otherwise noted, the blog posts on this site are licensed
-  under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
+  除非另有说明，否则本网站上的博客文章均根据作者的知识共享署名4.0协议国际版（CC BY 4.0）进行许可。
