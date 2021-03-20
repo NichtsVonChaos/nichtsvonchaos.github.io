@@ -7,13 +7,13 @@ tags: [jekyll, site, valine]     # TAG names should always be lowercase
 
 ## 前置工作
 
-根据[Valine 官方教程](https://valine.js.org/quickstart.html)注册LeanCloud以获取APP ID和APP Key。
+根据 [Valine 官方教程](https://valine.js.org/quickstart.html)注册 LeanCloud 以获取 APP ID 和 APP Key。
 
-如果是fork主题搭建博客，修改对应文件即可。如果是使用theme或者remote_theme，则需要下载对应的文件放在相应目录后再修改。
+如果是 fork 主题搭建博客，修改对应文件即可。如果是使用 theme 或者 remote_theme，则需要下载对应的文件放在相应目录后再修改。
 
-## 配置`_config.yml`
+## 配置 `_config.yml`
 
-找到disqus数据段并删除：
+找到 disqus 数据段并删除：
 
 ```yml
 disqus:
@@ -21,7 +21,7 @@ disqus:
   shortname: ''
 ```
 
-增加valine的数据段：
+增加 valine 的数据段：
 
 ```yml
 valine:
@@ -32,9 +32,9 @@ valine:
   avatar: mp                # 默认头像，参考 https://valine.js.org/avatar.html 
 ```
 
-## 配置`valine.html`
+## 配置 `valine.html`
 
-在`_includes`目录下创建`valine.html`填入以下内容，可删除`_includes/disqus.html`。
+在 `_includes` 目录下创建 `valine.html` 填入以下内容，可删除 `_includes/disqus.html`。
 
 {% raw %}
 ```html
@@ -52,12 +52,12 @@ valine:
 ```
 {% endraw %}
 
-更多参数配置可以参考[Valine官方文档](https://valine.js.org/configuration.html)。
+更多参数配置可以参考 [Valine官方文档](https://valine.js.org/configuration.html)。
 
-## 配置`head.html`
+## 配置 `head.html`
 
 {% raw %}
-打开`_includes/head.html`，在`{% seo title=false %}`这一行**前面**，插入下面的代码：
+打开 `_includes/head.html`，在 `{% seo title=false %}` 这一行**前面**，插入下面的代码：
 {% endraw %}
 
 {% raw %}
@@ -70,9 +70,9 @@ valine:
 ```
 {% endraw %}
 
-## 修改layout
+## 修改 layout
 
-打开`_layouts/page.html`，找到disqus的相关行：
+打开 `_layouts/page.html`，找到 disqus 的相关行：
 
 {% raw %}
 ```html
@@ -108,7 +108,7 @@ valine:
 ```
 {% endraw %}
 
-打开`_layouts/post.html`，找到disqus的相关行：
+打开 `_layouts/post.html`，找到 disqus 的相关行：
 
 {% raw %}
 ```html
@@ -158,6 +158,6 @@ valine:
 
 ## 大功告成
 
-快使用`bundle exec jekyll serve`来测试你的Valine评论系统吧！
+快使用 `bundle exec jekyll serve` 来测试你的 Valine 评论系统吧！
 
-想要管理评论，可以进入[LeanCloud](https://console.leancloud.cn/apps)应用控制台，打开存储→结构化数据→Comment。
+想要管理评论，可以进入 [LeanCloud](https://console.leancloud.cn/apps) 应用控制台，打开存储→结构化数据→Comment。
