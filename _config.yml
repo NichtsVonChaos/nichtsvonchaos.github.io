@@ -58,6 +58,11 @@ google_analytics:
     proxy_endpoint: ''
     cache: false  # pv data local cache, good for the users from GFW area.
 
+disqus:
+  comments: true  # boolean type, the global switch for posts comments.
+  shortname: 'nichtshsu'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
