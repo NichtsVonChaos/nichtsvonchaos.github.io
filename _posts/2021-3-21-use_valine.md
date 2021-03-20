@@ -36,6 +36,7 @@ valine:
 
 在`_includes`目录下创建`valine.html`填入以下内容，可删除`_includes/disqus.html`。
 
+{% raw %}
 ```html
 <div id="vcomments"></div>
 <script>
@@ -49,6 +50,7 @@ valine:
     });
 </script>
 ```
+{% endraw %}
 
 更多参数配置可以参考[Valine官方文档](https://valine.js.org/configuration.html)。
 
@@ -56,6 +58,7 @@ valine:
 
 打开`_includes/head.html`，在`{% seo title=false %}`这一行**前面**，插入下面的代码：
 
+{% raw %}
 ```html
 {% if page.layout == 'post' %}
   {% if site.valine.comments and page.comments %}
@@ -63,11 +66,13 @@ valine:
   {% endif %}
 {% endif %}
 ```
+{% endraw %}
 
 ## 修改layout
 
 打开`_layouts/page.html`，找到disqus的相关行：
 
+{% raw %}
 ```html
 {% if site.disqus.comments and page.comments %}
 <div class="row">
@@ -81,9 +86,11 @@ valine:
 </div> <!-- .row -->
 {% endif %}
 ```
+{% endraw %}
 
 将其修改为：
 
+{% raw %}
 ```html
 {% if site.valine.comments and page.comments %}
 <div class="row">
@@ -97,9 +104,11 @@ valine:
 </div> <!-- .row -->
 {% endif %}
 ```
+{% endraw %}
 
 打开`_layouts/post.html`，找到disqus的相关行：
 
+{% raw %}
 ```html
 <div class="row">
   <div class="col-12 col-lg-11 col-xl-8">
@@ -119,9 +128,11 @@ valine:
 
 </div> <!-- .row -->
 ```
+{% endraw %}
 
 将其修改为：
 
+{% raw %}
 ```html
 <div class="row">
   <div class="col-12 col-lg-11 col-xl-8">
@@ -141,6 +152,7 @@ valine:
 
 </div> <!-- .row -->
 ```
+{% endraw %}
 
 ## 大功告成
 
