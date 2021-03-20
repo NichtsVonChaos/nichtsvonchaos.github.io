@@ -47,6 +47,17 @@ social:
 google_site_verification: dr-ktF8m84-3Bgb1D5faBkWAeXF_7FJYGuvyQFr9GXY # change to your verification string
 # --------------------------
 
+google_analytics:
+  id: 'G-RK9LRGVP0T'          # Fill with your Google Analytics ID
+  pv:
+    # The Google Analytics pageviews switch.
+    # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
+    enabled: false
+    # the next options only valid when `google_analytics.pv` is enabled.
+    proxy_url: ''
+    proxy_endpoint: ''
+    cache: false  # pv data local cache, good for the users from GFW area.
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
