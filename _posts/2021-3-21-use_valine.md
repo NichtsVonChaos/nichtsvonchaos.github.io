@@ -56,7 +56,9 @@ valine:
 
 ## 配置`head.html`
 
+{% raw %}
 打开`_includes/head.html`，在`{% seo title=false %}`这一行**前面**，插入下面的代码：
+{% endraw %}
 
 {% raw %}
 ```html
