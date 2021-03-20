@@ -118,7 +118,7 @@ layout: default
 
     {% include post-nav.html %}
 
-    {% if site.valine.comments == true and page.comments == true %}
+    {% if site.valine.comments and page.comments %}
       {% include valine.html %}
     {% endif %}
 
