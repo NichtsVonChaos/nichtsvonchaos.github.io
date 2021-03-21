@@ -158,6 +158,29 @@ valine:
 ```
 {% endraw %}
 
+## 移除离线服务
+
+如果你此时部署到服务端，会发现虽然 Valine 评论系统显示在帖子的底部，但是本机发表的评论无法在其他设备看到，同样其他设备发表的评论无法在本机看到。
+
+同时，打开控制台，可以看到浏览器报错：
+
+```js
+Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Request method 'POST' is unsupported
+    at sw.js:1
+```
+
+这是因为 Valine 评论系统和离线服务冲突了。由于本人才学疏浅，没有什么好的解决方案，因此选择移除离线服务系统。
+
+首先删除 `sw.js`, `app.js`, `assets/js/data/cache-list.js` 文件。
+
+然后，打开`_includes/js-selector.html`文件，找到并删除
+
+{% raw %}
+```html
+<script defer src="{{ '/app.js' | relative_url }}"></script>
+```
+{% endraw %}
+
 ## 大功告成
 
 快使用 `bundle exec jekyll serve` 来测试你的 Valine 评论系统吧！
