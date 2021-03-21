@@ -41,6 +41,7 @@ valine:
 <div id="vcomments"></div>
 <script>
     new Valine({
+        av: AV,
         el: '#vcomments',
         appId: '{{ site.valine.leancloud_appid }}',
         appKey: '{{ site.valine.leancloud_appkey }}',
@@ -64,6 +65,7 @@ valine:
 ```html
 {% if page.layout == 'post' %}
   {% if site.valine.comments and page.comments %}
+    <script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
     <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   {% endif %}
 {% endif %}
