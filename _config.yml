@@ -64,6 +64,7 @@ valine:
   leancloud_appkey: 429FlKi0XHmPfifc1nLHt4lR
   placeholder: 说点什么吧！PS:在昵称栏输入QQ号可以自动获取QQ昵称和QQ头像哦~
   avatar: 'mp'
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
