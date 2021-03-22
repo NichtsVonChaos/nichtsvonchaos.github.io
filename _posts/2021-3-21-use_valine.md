@@ -1,5 +1,5 @@
 ---
-title: 使用Valine替换Chirpy主题中的Disqus评论系统
+title: 使用 Valine 替换 Chirpy 主题中的 Disqus 评论系统
 date: 2021-3-21 00:21:08 +0800
 categories: [Miscellanea, Site]
 tags: [jekyll, site, valine]     # TAG names should always be lowercase
@@ -41,7 +41,6 @@ valine:
 <div id="vcomments"></div>
 <script>
     new Valine({
-        av: AV,
         el: '#vcomments',
         appId: '{{ site.valine.leancloud_appid }}',
         appKey: '{{ site.valine.leancloud_appkey }}',
@@ -65,7 +64,6 @@ valine:
 ```html
 {% if page.layout == 'post' %}
   {% if site.valine.comments and page.comments %}
-    <script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
     <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   {% endif %}
 {% endif %}
@@ -155,6 +153,29 @@ valine:
   </div> <!-- .col-* -->
 
 </div> <!-- .row -->
+```
+{% endraw %}
+
+## 移除脱机服务
+
+如果你此时部署到服务端，会发现虽然 Valine 评论系统显示在帖子的底部，但是本机发表的评论无法在其他设备看到，同样其他设备发表的评论无法在本机看到。
+
+同时，打开控制台，可以看到浏览器报错：
+
+```js
+Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Request method 'POST' is unsupported
+    at sw.js:1
+```
+
+这是因为 Valine 评论系统和脱机服务冲突了。由于本人才学疏浅，没有什么好的解决方案，因此选择移除脱机服务系统。
+
+首先删除 `sw.js`, `app.js`, `assets/js/data/cache-list.js` 文件。
+
+然后，打开`_includes/js-selector.html`文件，找到并删除
+
+{% raw %}
+```html
+<script defer src="{{ '/app.js' | relative_url }}"></script>
 ```
 {% endraw %}
 

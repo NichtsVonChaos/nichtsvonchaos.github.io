@@ -12,4 +12,4 @@ pin: true
 
 [Heabot 原始版本（需要登陆）](https://www.heabot.cn/thread-76-1-1.html)
 
-[Github 移植版本（使用 Markdown）](https://nichtsvonchaos.github.io/gamemaker_8_0_tutorial/)
+[Github 移植版本（使用 Markdown）](https://nihil.cc/gamemaker_8_0_tutorial/)
