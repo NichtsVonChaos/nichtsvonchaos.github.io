@@ -183,4 +183,4 @@ Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Request met
 
 快使用 `bundle exec jekyll serve` 来测试你的 Valine 评论系统吧！
 
-想要管理评论，可以进入 [LeanCloud](https://console.leancloud.cn/apps) 应用控制台，打开存储→结构化数据→Comment。
+想要管理评论，可以进入 LeanCloud 应用控制台，打开存储→结构化数据→Comment。
