@@ -7,7 +7,7 @@ tags: [jekyll, site, valine]     # TAG names should always be lowercase
 
 ## 前置工作
 
-根据 [Valine 官方教程](https://valine.js.org/quickstart.html)注册 LeanCloud 以获取 APP ID 和 APP Key。
+根据 [Valine 官方教程](https://valine.js.org/quickstart.html)注册 LeanCloud 以获取 APP ID 和 APP Key。注：注册国内版 LeanCloud 需要绑定已备案的域名，而注册国际版 LeanCloud 则不需要。
 
 如果是 fork 主题搭建博客，修改对应文件即可。如果是使用 theme 或者 remote_theme，则需要下载对应的文件放在相应目录后再修改。
 
@@ -167,7 +167,7 @@ Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Request met
     at sw.js:1
 ```
 
-这是因为 Valine 评论系统和脱机服务冲突了。由于本人才学疏浅，没有什么好的解决方案，因此选择移除脱机服务系统。
+这是因为 Valine 评论系统和脱机服务冲突了。由于本人才学疏浅，没有什么好的解决方案，因此选择移除脱机服务系统。您也可以在 [Issue #301](https://github.com/cotes2020/jekyll-theme-chirpy/issues/301) 中跟踪此问题。
 
 首先删除 `sw.js`, `app.js`, `assets/js/data/cache-list.js` 文件。
 
