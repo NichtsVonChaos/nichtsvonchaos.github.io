@@ -58,6 +58,7 @@ google_analytics:
     proxy_endpoint: ''
     cache: false  # pv data local cache, good for the users from GFW area.
 
+# Valine comment system.
 valine:
   comments: true
   leancloud_appid: IpgOdqSXjwrACC2VyDICQNvv-MdYXbMMI
