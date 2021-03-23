@@ -4,6 +4,6 @@
 
 * 汉化了大部分英文。
 * 使用并入了 [#357](https://github.com/xCss/Valine/pull/357) 的 [Valine 评论系统](https://valine.js.org/)替换 Disqus。
-* 使用[知乎式404界面](https://404.life/zhihu-404-template.html)，可以返回首页或者返回上一页。
+* 使用[知乎式 404 界面](https://404.life/zhihu-404-template.html)，可以返回首页或者返回上一页。
 
-如果喜欢我这个定制化的版本，欢迎 Fork，但是请修改 `_config.yml` 中的 `google_site_verification`, `google_analytics` 的 `id` 以及 `valine` 的 `leancloud_appid` 和 `leancloud_appkey`，请勿使用我的配置。
+如果喜欢我这个定制化的版本，欢迎 Fork，但是请修改 `_config.yml` 中的 `google_site_verification`, `google_analytics` 的 `id` 以及 `valine` 的 `leancloud_appid` 和 `leancloud_appkey`，以及 `CNAME` 文件中配置的域名，请勿使用我的配置。
