@@ -38,6 +38,7 @@ social:
   email: NichtsVonChaos@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
+    - https://nihil.cc/
     - https://twitter.com/Still_Nihil      # change to your twitter homepage
     - https://github.com/NichtsVonChaos       # change to your github homepage
     # Uncomment below to add more social links
