@@ -4,25 +4,29 @@
 platforms:
   -
     type: Twitter
-    icon: "fab fa-twitter"
+    icon: "iconfont icon-twitter"
     link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"
   -
     type: Line
-    icon: "fab fa-line"
+    icon: "iconfont icon-13"
     link: "https://lineit.line.me/share/ui?url=URL&text=TITLE"
   -
     type: Facebook
-    icon: "fab fa-facebook-square"
+    icon: "iconfont icon-facebook"
     link: "https://www.facebook.com/sharer/sharer.php?title=TITLE&u=URL"
   -
     type: Telegram
-    icon: "fab fa-telegram"
+    icon: "iconfont icon-telegram"
     link: "https://telegram.me/share?text=TITLE&url=URL"
   -
     type: QQ
-    icon: "fab fa-qq"
+    icon: "iconfont icon-QQ"
     link: "http://connect.qq.com/widget/shareqq/index.html?url=URL&title=TITLE"
   -
+    type: QQ空间
+    icon: "iconfont icon-qzone"
+    link: "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=URL&title=TITLE"
+  -
     type: 微博
-    icon: "fab fa-weibo"
+    icon: "iconfont icon-weibo"
     link: "http://service.weibo.com/share/share.php?title=TITLE&url=URL"

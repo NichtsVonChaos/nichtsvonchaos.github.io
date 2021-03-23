@@ -253,27 +253,30 @@
         @extend %btn-share-hovor;
       }
     }
-    .fab {
-      &.fa-twitter {
+    .iconfont {
+      &.icon-twitter {
         @include btn-sharing-color(rgba(29, 161, 242, 1));
       }
-      &.fa-facebook-square {
+      &.icon-facebook {
         @include btn-sharing-color(rgb(66, 95, 156));
       }
-      &.fa-telegram {
+      &.icon-telegram {
         @include btn-sharing-color(rgb(39, 159, 217));
       }
-      &.fa-weibo {
+      &.icon-weibo {
         @include btn-sharing-color(rgb(229, 20, 43));
       }
-      &.fa-line {
+      &.icon-13 {
         @include btn-sharing-color(rgb(1, 187, 10));
+      }
+      &.icon-qzone {
+        @include btn-sharing-color(rgb(255, 218, 5))
       }
     }
 
   } // .share-icons
 
-  .fas.fa-link {
+  .iconfont.icon-link {
     @include btn-sharing-color(rgb(171, 171, 171));
   }
 
