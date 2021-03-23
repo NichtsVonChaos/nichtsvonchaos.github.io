@@ -60,25 +60,25 @@ layout: page
 
       <div>
         <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
+        <i class="iconfont icon-Monthdatecalendar fa-fw"></i>
         {% include timeago.html date=post.date tooltip=true %}
 
         <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
+        <i class="iconfont icon-clock fa-fw"></i>
         {% include read-time.html content=post.content %}
 
         <!-- page views -->
         {% if site.google_analytics.pv.enabled %}
-        <i class="far fa-eye fa-fw"></i>
+        <i class="iconfont icon-eye fa-fw"></i>
         <span id="pv_{{-post.title-}}" class="pageviews">
-          <i class="fas fa-spinner fa-spin fa-fw"></i>
+          <i class="iconfont icon-spinner fa-spin fa-fw"></i>
         </span>
         {% endif %}
       </div>
 
       {% if post.pin %}
       <div class="pin">
-        <i class="fas fa-thumbtack fa-fw"></i>
+        <i class="iconfont icon-thumb-tack fa-fw"></i>
         <span>{{ site.data.label.pin_prompt | default: 'Pinned' }}</span>
       </div>
       {% endif %}

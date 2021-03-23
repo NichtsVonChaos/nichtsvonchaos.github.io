@@ -2,29 +2,15 @@
 
 -
   type: github
-  icon: 'fab fa-github-alt'
+  icon: 'iconfont icon-github'
 -
   type: twitter
-  icon: 'fab fa-twitter'
+  icon: 'iconfont icon-twitter'
 -
   type: email
-  icon: 'fas fa-envelope'
+  icon: 'iconfont icon-mail'
   noblank: true            # open link in current tab
 -
   type: rss
-  icon: 'fas fa-rss'
+  icon: 'iconfont icon-rss'
   noblank: true
-
-# Uncomment and complete the url below to enable more contact options
-# -
-#   type: mastodon
-#   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your mastodon account page
-# -
-#   type: linkedin
-#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your Linkedin homepage
-# -
-#   type: stack-overflow
-#   icon: 'fab fa-stack-overflow'
-#   url:  ''                  # Fill with your stackoverflow homepage

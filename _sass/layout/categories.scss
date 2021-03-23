@@ -13,8 +13,8 @@
   }
 
   i {
-    &.far,
-    &.fas {
+    &.iconfont,
+    &.iconfont {
       font-size: 86%; // fontawesome icons
     }
   }
@@ -45,7 +45,7 @@
   border-radius: 50%;
   text-align: center;
   color: #6c757d !important;
-  > i.fas {
+  > i.iconfont {
     position: relative;
     height: 0.7rem;
     width: 1rem;

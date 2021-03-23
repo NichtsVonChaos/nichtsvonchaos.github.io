@@ -1,6 +1,6 @@
 ---
 title: 关于/About
-icon: fas fa-info
+icon: iconfont icon-info
 order: 4
 ---
 

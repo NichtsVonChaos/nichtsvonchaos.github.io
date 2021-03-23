@@ -8,6 +8,7 @@
     @include dark-scheme;
 
     .mode-toggle {
+      display: inline-block;
       transform: rotateY(180deg);
     }
 
@@ -15,6 +16,7 @@
     @include light-scheme;
 
     .mode-toggle {
+      display: inline-block;
       transform: none;
     }
   }
@@ -337,7 +339,7 @@ footer {
 
 /* --- post --- */
 
-.pageviews .fa-spinner {
+.pageviews .icon-spinner {
   font-size: 80%;
 }
 
@@ -879,7 +881,7 @@ $sidebar-display: "sidebar-display";
     font-size: 0.9rem;
     color: var(--search-icon-color);
   }
-  .fa-times-circle { /* button 'clean up' */
+  .icon-times-circle { /* button 'clean up' */
     visibility: hidden;
   }
 }
@@ -1198,7 +1200,7 @@ $sidebar-display: "sidebar-display";
     &.loaded ~ a {
       margin-right: 1rem;
     }
-    .fa-times-circle {
+    .icon-times-circle {
       right: 5.2rem;
     }
   }
@@ -1433,7 +1435,7 @@ $sidebar-display: "sidebar-display";
     }
   }
 
-  #search-wrapper .fa-times-circle {
+  #search-wrapper .icon-times-circle {
     right: 2.6rem;
   }
 
