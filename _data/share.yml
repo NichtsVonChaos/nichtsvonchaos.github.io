@@ -7,6 +7,10 @@ platforms:
     icon: "fab fa-twitter"
     link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"
   -
+    type: Line
+    icon: "fab fa-line"
+    link: "https://lineit.line.me/share/ui?url=URL&text=TITLE"
+  -
     type: Facebook
     icon: "fab fa-facebook-square"
     link: "https://www.facebook.com/sharer/sharer.php?title=TITLE&u=URL"
@@ -14,13 +18,11 @@ platforms:
     type: Telegram
     icon: "fab fa-telegram"
     link: "https://telegram.me/share?text=TITLE&url=URL"
-
   -
     type: QQ
     icon: "fab fa-qq"
     link: "http://connect.qq.com/widget/shareqq/index.html?url=URL&title=TITLE"
-  
   -
-    type: Weibo
+    type: 微博
     icon: "fab fa-weibo"
     link: "http://service.weibo.com/share/share.php?title=TITLE&url=URL"

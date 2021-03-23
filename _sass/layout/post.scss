@@ -266,6 +266,9 @@
       &.fa-weibo {
         @include btn-sharing-color(rgb(229, 20, 43));
       }
+      &.fa-line {
+        @include btn-sharing-color(rgb(1, 187, 10));
+      }
     }
 
   } // .share-icons
