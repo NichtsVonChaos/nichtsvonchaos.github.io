@@ -27,6 +27,10 @@ platforms:
     icon: "iconfont icon-qzone"
     link: "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=URL&title=TITLE"
   -
+    type: 贴吧
+    icon: "iconfont icon-tieba"
+    link: "http://s.share.baidu.com/?click=1&url=URL&uid=0&to=tieba&type=text&pic=&title=TITLE&key=&desc=&comment=&relateUid=&searchPic=0&sign=on"
+  -
     type: 微博
     icon: "iconfont icon-weibo"
     link: "http://service.weibo.com/share/share.php?title=TITLE&url=URL"
