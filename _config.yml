@@ -117,6 +117,11 @@ external_links:
     # 为 true 时当且仅当图片无法加载时，使用名字替代。为 false 时始终显示名字。
     automatic_name: true
     link: https://996.icu
+  -
+    icon: /assets/img/home/github.svg
+    name: 此博客的 Github 仓库
+    automatic_name: false
+    link: https://github.com/NichtsVonChaos/nichtsvonchaos.github.io
   # 在下面添加更多外部链接
   # -
   #   icon: 

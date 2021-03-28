@@ -224,13 +224,13 @@ footer {
   }
 
   a {
-    &:hover {
-      @extend %link-hover;
-    }
-
     @extend %no-bottom-border;
-
     color: #6c757d;
+  }
+  
+  img {
+    max-height: 60%;
+    margin: auto;
   }
 }
 
