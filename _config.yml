@@ -87,8 +87,24 @@ img_cdn: ''
 # 侧边栏的头像，支持本地或 CROS 资源
 avatar: /avatar.png
 
-# 是否为帖子启用目录的全局开关
-toc: true
+# 设置显示右侧边栏的内容
+panel:
+  # 设置显示在帖子中右侧边栏的内容
+  # 
+  # 提示:
+  #   全局开关为false时必定不显示对应块。
+  #   全局开关为true时，可以在帖子的 md 文件头部使用形如:
+  #   lastmod: false
+  #   的方式为该帖子单独关闭右侧边栏的功能。
+  post:
+    # 最近更新
+    lastmod: false
+    # 热门标签
+    trending_tags: false
+    # 外部链接
+    external_links: false
+    # 目录
+    toc: true
 
 # 每一页的帖子数量
 paginate: 10
@@ -139,7 +155,11 @@ defaults:
     values:
       layout: post
       comments: true    # 在帖子中启用评论
-      toc: true         # 在帖子中启用目录
+      # 右侧边栏的默认显示
+      lastmod: true
+      trending_tags: true
+      external_links: true
+      toc: true
   -
     scope:
       path: _drafts

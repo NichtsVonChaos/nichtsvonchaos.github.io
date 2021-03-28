@@ -98,15 +98,30 @@ layout: default
 
   </div> <!-- #post-wrapper -->
 
+  {% assign enable_lastmod = false %}
+  {% assign enable_trending_tags = false %}
+  {% assign enable_external_links = false %}
   {% assign enable_toc = false %}
+  
+  {% if site.panel.post.lastmod and page.lastmod %}
+    {% assign enable_lastmod = true %}
+  {% endif %}
 
-  {% if site.toc and page.toc %}
+  {% if site.panel.post.trending_tags and page.trending_tags %}
+    {% assign enable_trending_tags = true %}
+  {% endif %}
+
+  {% if site.panel.post.external_links and page.external_links %}
+    {% assign enable_external_links = true %}
+  {% endif %}
+  
+  {% if site.panel.post.toc and page.toc %}
     {% if content contains '<h2' or content contains '<h3' %}
       {% assign enable_toc = true %}
     {% endif %}
   {% endif %}
-
-  {% include panel.html toc=enable_toc %}
+  
+  {% include panel.html lastmod=enable_lastmod trending_tags=enable_trending_tags external_links=enable_external_links toc=enable_toc %}
 
 </div> <!-- .row -->
 

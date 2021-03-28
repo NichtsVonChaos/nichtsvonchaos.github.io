@@ -4,10 +4,11 @@
 
 <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down">
 
+  {% if include.lastmod or include.trending_tags or include.external_links %}
   <div class="access">
-
     {% include update-list.html %}
-
+    
+    {% if include.lastmod %}
     {% if update_list.size > 0 %}
 
     <div id="access-lastmod" class="post">
@@ -25,9 +26,11 @@
     </div> <!-- #access-lastmod -->
 
     {% endif %}
+    {% endif %}
 
     {% include trending-tags.html %}
-
+    
+    {% if include.trending_tags %}
     {% if trending_tags.size > 0 %}
     <div id="access-tags">
       <span>{{- site.data.label.panel.trending_tags | default: 'Trending Tags' -}}</span>
@@ -41,7 +44,9 @@
       </div>
     </div>
     {% endif %}
+    {% endif %}
 
+    {% if include.external_links %}
     {% if site.external_links.size > 0 %}
     <div id="access-links">
       <span>{{- site.data.label.panel.external_links | default: 'External Links' -}}</span>
@@ -59,19 +64,20 @@
         {% endfor %}
 
     </div>
+    {% endif %}
+    {% endif %}
+  </div> <!-- .access -->
+  {% endif %}
+
+  {% if include.toc %}
+  <!-- BS-toc.js will be loaded at medium priority -->
+  <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+  <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+    <span class="pl-3 pt-2 mb-2">
+      {{- site.data.label.panel.toc | default: 'Contents' -}}
+    </span>
+    <nav id="toc" data-toggle="toc"></nav>
   </div>
   {% endif %}
-</div> <!-- .access -->
-
-{% if include.toc %}
-<!-- BS-toc.js will be loaded at medium priority -->
-<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-  <span class="pl-3 pt-2 mb-2">
-    {{- site.data.label.panel.toc | default: 'Contents' -}}
-  </span>
-  <nav id="toc" data-toggle="toc"></nav>
-</div>
-{% endif %}
 
 </div> <!-- #panel-wrapper -->
