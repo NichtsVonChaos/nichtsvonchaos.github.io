@@ -3,6 +3,7 @@
 panel:
   lastmod: 最近更新
   trending_tags: 热门标签
+  external_links: 外部链接
   toc: 目录
 
 post:

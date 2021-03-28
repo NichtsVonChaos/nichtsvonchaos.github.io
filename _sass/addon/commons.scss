@@ -212,6 +212,28 @@ footer {
   }
 }
 
+#access-links {
+  li {
+    height: 1.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    list-style: none;
+  }
+
+  a {
+    &:hover {
+      @extend %link-hover;
+    }
+
+    @extend %no-bottom-border;
+
+    color: #6c757d;
+  }
+}
+
 #access-lastmod {
 
   li {
