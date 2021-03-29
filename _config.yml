@@ -19,7 +19,7 @@ title: Nihil       # 主标题
 tagline: 丑新罢了   # 副标题
 
 description: >-                        # 由 seo meta 和 atom feed 使用
-  Nichts Hsu的个人博客
+  Nichts Hsu 的个人博客
 
 # 填入你的网站的协议和域名，例如，'https://username.github.io'
 url: 'https://nihil.cc'
@@ -124,7 +124,7 @@ paginate: 10
 external_links:
   -
     icon: https://img.shields.io/badge/link-996.icu-red.svg
-    # 是否使用 Iconfont 的图标
+    # 是否使用 Iconfont 的图标字体
     use_iconfont: false
     name: 996.icu
     # 为 true 时当且仅当图片无法加载时，使用名字替代。为 false 时始终显示名字。
