@@ -47,16 +47,19 @@ social:
 google_site_verification: dr-ktF8m84-3Bgb1D5faBkWAeXF_7FJYGuvyQFr9GXY # 改为你的 Google 认证字符串
 # --------------------------
 
-# 自定义 Iconfont 的图标代码。 › https://www.iconfont.cn/
+# 自定义 Iconfont 的图标链接。 › https://www.iconfont.cn/
 # 需要添加自己的 Iconfont 图标，请在 Iconfont 中新建项目，
-# 加入图标到项目，选择 Font Class，查看在线链接，并将其拷贝到下面的属性中。
+# 加入图标到项目，选择 Font Class，查看在线链接，并将其拷贝到下面。
 #
 # 注意：请不要与项目原本使用的图标重名，请全局搜索以确保该名称没被使用。
 # 一个比较好的办法是修改 Iconfont 项目的 FontClass/Symbol 前缀为其他值。
-#
-# 当前 css 包含以 'icon-nihil-' 开头的图标，替换后这些图标不再可用，
-# 但是以 'icon-' 开头的图标属于另一个 css，并不会失效。
-iconfont_css: //at.alicdn.com/t/font_2451185_tgvgeuen2lh.css
+iconfont_css: 
+  # 此 css 包含以 'icon-' 为前缀的图标，为模板的核心图标，请勿删除。
+  - //at.alicdn.com/t/font_2440352_enqf4q2284.css
+  # 此 css 包含以 'icon-nihil-' 为前缀的图标，为我博客内容使用的图标，可删除。
+  - //at.alicdn.com/t/font_2451185_tgvgeuen2lh.css
+  # 添加你的 Iconfont 图标链接
+  # - 
 
 google_analytics:
   id: 'G-RK9LRGVP0T'          # 填入你的 Google Analytics ID

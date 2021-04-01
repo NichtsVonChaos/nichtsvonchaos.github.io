@@ -70,9 +70,10 @@
     integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous">
     
     <!-- icon font -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_2440352_enqf4q2284.css">
     {% if site.iconfont_css %}
-    <link rel="stylesheet" href="{{ site.iconfont_css }}">
+    {% for css in site.iconfont_css %}
+    <link rel="stylesheet" href="{{ css }}">
+    {% endfor %}
     {% endif %}
 
   {% include css-selector.html %}
