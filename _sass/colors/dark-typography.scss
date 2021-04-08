@@ -131,5 +131,24 @@
       rgb(39, 39, 45),
       rgb(26, 26, 30));
   }
-
+  
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background-color: #141414;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      background-color: rgb(114, 114, 114);
+    }
+  
+    ::-webkit-scrollbar-track {
+      border-radius: 6px;
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      background-color: #141414;
+    }
 } // dark-scheme
