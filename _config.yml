@@ -62,15 +62,11 @@ iconfont_css:
   # - 
 
 google_analytics:
-  id: 'G-RK9LRGVP0T'          # 填入你的 Google Analytics ID
+  id: ''              # 填入你的 Google Analytics ID
+  # Google Analytics 页面浏览量开关
   pv:
-    # Google Analytics 页面浏览量开关
-    # 不要启用它，除非你知道如何部署 Google Analytics superProxy
-    enabled: false
-    # 下面的设置仅在 `google_analytics.pv` 启用时生效
-    proxy_url: ''
-    proxy_endpoint: ''
-    cache: false  # pv 数据本地缓存，对 GFW 区域的人而言很好
+    proxy_endpoint:   # 填入 Google App Engine 的 Google Analytics superProxy 端点
+    cache_path:       # pv 数据本地缓存，对 GFW 区域的人而言很好
 
 # Valine 评论系统
 valine:

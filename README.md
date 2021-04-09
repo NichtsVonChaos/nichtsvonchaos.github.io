@@ -9,6 +9,6 @@
 * 使用 [iconfont](https://www.iconfont.cn/) 取代 [Font Awesome](https://fontawesome.com/)，有更多的图标选择空间，参见 `_config.yml` 里的 `iconfont_css`。
 * 右侧边栏添加了外部链接块，参见 `_config.yml` 里的 `external_links`。
 * 可以自由地控制在帖子中显示右侧边栏哪些块。参见 `_config.yml` 里的 `panel`。
-* 添加了滚动条样式。
+* 添加滚动条样式以适应主题，而不是将其隐藏。
 
 如果喜欢我这个定制化的版本，欢迎 Fork，但是请修改 `_config.yml` 中的 `google_site_verification`, `google_analytics` 的 `id` 以及 `valine` 的 `leancloud_appid` 和 `leancloud_appkey`，以及 `CNAME` 文件中配置的域名，请勿使用我的配置。

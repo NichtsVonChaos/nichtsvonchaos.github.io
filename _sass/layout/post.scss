@@ -156,6 +156,10 @@
   line-height: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+
+  &.nav-link:not(.active) {
+    color: inherit;
+  }
 }
 
 /* --- Related Posts --- */
