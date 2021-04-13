@@ -1,0 +1,21 @@
+-
+  icon: gm8.ico
+  link: https://gm8.nihil.cc/
+  title: GameMaker 8.0 从入门到入土
+  description: >-
+    托管于 Github 的 GameMaker 8.0 教程。
+    该教程最早撰写于 Heabot 论坛，后移植到 Markdown 并托管于 Github Pages 上。
+-
+  icon: amethyst.ico
+  link: https://amethyst.nihil.cc/
+  title: Amethyst 文档
+  description: >-
+    Amethyst 游戏引擎文档的个人汉化。
+    Amethyst 是基于 Rust 语言开发的免费开源引擎，以 MIT 和 Apache 双重许可证发布。
+    汉化正在进行中，未完成。
+# -
+#   icon: 保存在 assets/subdomain 下的图标
+#   link: 子域名链接
+#   title: 标题
+#   description: >-
+#      描述

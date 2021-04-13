@@ -1,0 +1,31 @@
+---
+layout: page
+# List all subdomains
+---
+
+{% for subdomain in site.data.subdomain %}
+<div class="subdomain-entity">
+    <div class="subdomain-link">
+        <p><a href="{{ subdomain.link }}" class="subdomain-a">{{ subdomain.link }}</a></p>
+    </div>
+    <div class="subdomain-head">
+        <h1>
+            <a href="{{ subdomain.link }}" class="subdomain-head-a">
+                {% if subdomain.icon %}
+                <div class="subdomain-icon">
+                    <img src="/assets/img/subdomain/{{ subdomain.icon }}"/>
+                </div>
+                {% endif %}
+                <div class="subdomain-title">
+                    {{ subdomain.title }}
+                </div>
+            </a>
+        </h1>
+    </div>
+    <div class="subdomain-desc">
+        <p>
+            {{ subdomain.description }}
+        </p>
+    </div>
+</div>
+{% endfor %}

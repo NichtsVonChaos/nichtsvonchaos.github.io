@@ -1,0 +1,46 @@
+.subdomain-entity {
+    .subdomain-link {
+        p {
+            font-size: 0.8rem;
+            margin: 0;
+            a.subdomain-a {
+                color: #888888;
+                border: none;
+                text-decoration: none;
+            }
+            
+            a.subdomain-a::hover {
+                border: none;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    .subdomain-head {
+        h1 {
+            margin-top: 0;
+            
+            a.subdomain-head-a {
+                border: none;
+                text-decoration: none;
+            }
+            
+            a.subdomain-head-a::hover {
+                border: none;
+                text-decoration: none;
+            }
+            
+            .subdomain-icon {
+                display: inline-block;
+            }
+    
+            .subdomain-title {
+                display: inline-block;
+            }
+        }
+    }
+    
+    .subdomain-desc {
+    
+    }
+}

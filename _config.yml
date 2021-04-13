@@ -55,7 +55,7 @@ google_site_verification: dr-ktF8m84-3Bgb1D5faBkWAeXF_7FJYGuvyQFr9GXY # 改为�
 # 一个比较好的办法是修改 Iconfont 项目的 FontClass/Symbol 前缀为其他值。
 iconfont_css: 
   # 此 css 包含以 'icon-' 为前缀的图标，为模板的核心图标，请勿删除。
-  - //at.alicdn.com/t/font_2440352_enqf4q2284.css
+  - //at.alicdn.com/t/font_2440352_9p9wwmtmnm.css
   # 此 css 包含以 'icon-nihil-' 为前缀的图标，为我博客内容使用的图标，可删除。
   - //at.alicdn.com/t/font_2451185_tgvgeuen2lh.css
   # 添加你的 Iconfont 图标链接
