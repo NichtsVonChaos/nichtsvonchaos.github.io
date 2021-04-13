@@ -1,46 +1,64 @@
 .subdomain-entity {
+    border-bottom: 1px solid var(--main-border-color);
+
     .subdomain-link {
-        p {
+        height: 1rem;
+        display: flex;
+
+        h6 {
+            height: 1rem;
             font-size: 0.8rem;
-            margin: 0;
+            margin-bottom: 0;
+            
             a.subdomain-a {
+                height: 1rem;
                 color: #888888;
                 border: none;
                 text-decoration: none;
-            }
-            
-            a.subdomain-a::hover {
-                border: none;
-                text-decoration: none;
+
+                ::hover {
+                    border: none;
+                    text-decoration: none;
+                }
             }
         }
     }
-    
+
     .subdomain-head {
         h1 {
-            margin-top: 0;
-            
+            margin-top: 2rem;
+            margin-bottom: 0;
+            line-height: unset;
+
             a.subdomain-head-a {
+                position: relative;
+                display: flex;
                 border: none;
                 text-decoration: none;
-            }
-            
-            a.subdomain-head-a::hover {
-                border: none;
-                text-decoration: none;
-            }
-            
-            .subdomain-icon {
-                display: inline-block;
-            }
-    
-            .subdomain-title {
-                display: inline-block;
+
+                ::hover {
+                    border: none;
+                    text-decoration: none;
+                }
+
+                .subdomain-icon {
+                    display: inline-block;
+                    height: 2rem;
+                    width: 2rem;
+
+                    img {
+                        display: block;
+                        height: 1.8rem;
+                    }
+                }
+
+                .subdomain-title {
+                    display: inline-block;
+                }
             }
         }
     }
-    
+
     .subdomain-desc {
-    
     }
 }

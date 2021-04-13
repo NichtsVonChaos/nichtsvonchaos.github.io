@@ -5,15 +5,12 @@ layout: page
 
 {% for subdomain in site.data.subdomain %}
 <div class="subdomain-entity">
-    <div class="subdomain-link">
-        <p><a href="{{ subdomain.link }}" class="subdomain-a">{{ subdomain.link }}</a></p>
-    </div>
     <div class="subdomain-head">
         <h1>
             <a href="{{ subdomain.link }}" class="subdomain-head-a">
                 {% if subdomain.icon %}
                 <div class="subdomain-icon">
-                    <img src="/assets/img/subdomain/{{ subdomain.icon }}"/>
+                    <img src="/assets/img/subdomain/{{ subdomain.icon }}" />
                 </div>
                 {% endif %}
                 <div class="subdomain-title">
@@ -21,6 +18,13 @@ layout: page
                 </div>
             </a>
         </h1>
+    </div>
+    <div class="subdomain-link">
+        <h6>
+            <a href="{{ subdomain.link }}" class="subdomain-a">
+                {{ subdomain.link }}
+            </a>
+        </h6>
     </div>
     <div class="subdomain-desc">
         <p>
