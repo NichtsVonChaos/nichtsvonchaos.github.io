@@ -1,4 +1,4 @@
-#  The date format
+#  时间格式
 
 tooltip: "%a, %b %e, %Y, %l:%M %p %z"
 
