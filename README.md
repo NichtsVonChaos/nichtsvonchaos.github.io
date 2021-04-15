@@ -7,7 +7,7 @@
 * 使用[知乎式 404 界面](https://404.life/zhihu-404-template.html)，可以返回首页或者返回上一页。
 * 新增了分享到 Line，QQ，QQ 空间，贴吧和微博，参见 `_data/share.yml`。
 * 使用 [iconfont](https://www.iconfont.cn/) 取代 [Font Awesome](https://fontawesome.com/)，有更多的图标选择空间，参见 `_config.yml` 里的 `iconfont_css`。
-* 右侧边栏添加了外部链接块，参见 `_config.yml` 里的 `external_links`。
+* 右侧边栏添加了外部链接块，参见 `_data/external_links.yml`。
 * 可以自由地控制在帖子中显示右侧边栏哪些块。参见 `_config.yml` 里的 `panel`。
 * 添加滚动条样式以适应主题，而不是将其隐藏。
 * 添加了子域页。参见 `_data/subdomain.yml`。

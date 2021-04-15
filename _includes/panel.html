@@ -47,12 +47,12 @@
     {% endif %}
 
     {% if include.external_links %}
-    {% if site.external_links.size > 0 %}
+    {% if site.data.external_links.size > 0 %}
     <div id="access-links">
       <span>{{- site.data.label.panel.external_links | default: 'External Links' -}}</span>
       <ul class="post-content pl-0 pb-1 ml-1 mt-2">
 
-        {% for external_link in site.external_links %}
+        {% for external_link in site.data.external_links %}
         <li><a href="{{ external_link.link }}">
             {% if external_link.automatic_name %}
             {% if external_link.use_iconfont %}
