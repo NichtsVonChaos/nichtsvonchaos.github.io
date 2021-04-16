@@ -3,7 +3,7 @@
 */
 
 .dash {
-  margin: 0 .5rem .6rem .5rem;
+  margin: 0 0.5rem 0.6rem 0.5rem;
   border-bottom: 2px dotted var(--dash-color);
 }
 
@@ -13,7 +13,8 @@
     line-height: 1.5rem;
     padding: 0.6rem 0;
 
-    &::before { // dot
+    &::before {
+      // dot
       background: #999;
       width: 5px;
       height: 5px;
@@ -25,7 +26,8 @@
       margin-right: 0.5rem;
     }
 
-    > a { /* post's title */
+    > a {
+      /* post's title */
       @extend %no-bottom-border;
 
       font-size: 1.1rem;
@@ -37,7 +39,8 @@
   }
 }
 
-#page-tag h1 > i { // tag icon
+#page-tag h1 > i {
+  // tag icon
   font-size: 1.2rem;
 }
 
@@ -60,7 +63,7 @@
   #page-tag {
     ul > li {
       &::before {
-        margin: 0 .5rem;
+        margin: 0 0.5rem;
       }
       > a {
         white-space: nowrap;

@@ -20,7 +20,8 @@
     position: relative;
     left: 8px;
 
-    &::after { /* Year dot */
+    &::after {
+      /* Year dot */
       content: "";
       display: block;
       position: relative;
@@ -45,7 +46,6 @@
         left: 67px;
       }
     }
-
   } // #archives span.lead
 
   ul {
@@ -122,15 +122,14 @@
     }
     &.day {
       font-size: 85%;
-      font-family: 'Lato', sans-serif;
+      font-family: "Lato", sans-serif;
       text-align: center;
       margin-right: -2px;
       width: 1.2rem;
       position: relative;
-      left: -.15rem;
+      left: -0.15rem;
     }
   } // #archives .date
-
 } // #archives
 
 @media all and (max-width: 576px) {

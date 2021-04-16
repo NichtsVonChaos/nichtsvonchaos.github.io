@@ -30,13 +30,11 @@
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
-
   }
 
   .card-header > span > i:first-child {
     @extend %category-icon-color;
   }
-
 } // .categories
 
 .category-trigger {
@@ -53,7 +51,8 @@
   }
 }
 
-@media (hover: hover) { // only works on desktop
+@media (hover: hover) {
+  // only works on desktop
   .category-trigger:hover {
     background-color: var(--categories-hover-bg);
   }

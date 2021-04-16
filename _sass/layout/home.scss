@@ -23,7 +23,7 @@
       align-items: center;
       border-radius: 50%;
       border: 1px solid var(--btn-paginator-border-color);
-      font-family: 'Lato', sans-serif;
+      font-family: "Lato", sans-serif;
       background-color: var(--button-bg);
       &:hover {
         background-color: var(--btn-paginator-hover-color);
@@ -39,6 +39,7 @@
     }
     &.disabled {
       cursor: not-allowed;
+
       .page-link {
         color: rgba(108, 117, 125, 0.57);
         border-color: var(--btn-paginator-border-color);
@@ -53,7 +54,6 @@
       margin-right: 0.7rem;
     }
   } // .page-item
-
 } // .pagination
 
 #post-list {
@@ -108,9 +108,7 @@
         display: none;
       }
     }
-
   } // .post-preview
-
 } // #post-list
 
 /* Hide SideBar and TOC */
@@ -122,7 +120,6 @@
 
 /* Sidebar is visible */
 @media all and (min-width: 831px) {
-
   #post-list {
     margin-top: 1.5rem;
     .post-preview .post-meta {
@@ -149,7 +146,6 @@
       height: 2.2rem;
     }
   }
-
 }
 
 /* Pannel hidden */
