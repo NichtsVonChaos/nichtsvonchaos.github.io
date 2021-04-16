@@ -1,68 +1,68 @@
 .subdomain-entity {
-    border-bottom: 1px solid var(--main-border-color);
+  border-bottom: 1px solid var(--main-border-color);
 
-    .subdomain-link {
+  .subdomain-link {
+    height: 1rem;
+    display: flex;
+
+    h6 {
+      display: flex;
+      height: 1rem;
+      color: #888888;
+      font-size: 0.8rem;
+      margin-bottom: 0;
+      max-width: 100%;
+
+      a.subdomain-a {
+        position: relative;
         height: 1rem;
+        color: #888888;
+        max-width: 100%;
+        border: none;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .subdomain-head {
+    h1 {
+      margin-top: 2rem;
+      margin-bottom: 0;
+      line-height: unset;
+
+      a.subdomain-head-a {
+        position: relative;
         display: flex;
+        border: none;
+        text-decoration: none;
 
-        h6 {
-            display: flex;
-            height: 1rem;
-            color: #888888;
-            font-size: 0.8rem;
-            margin-bottom: 0;
-            max-width: 100%;
-            
-            a.subdomain-a {
-                position: relative;
-                height: 1rem;
-                color: #888888;
-                max-width: 100%;
-                border: none;
-                text-decoration: none;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-            }
+        ::hover {
+          border: none;
+          text-decoration: none;
         }
-    }
 
-    .subdomain-head {
-        h1 {
-            margin-top: 2rem;
-            margin-bottom: 0;
-            line-height: unset;
+        .subdomain-icon {
+          display: inline-block;
+          height: 2rem;
+          width: 2rem;
+          min-width: 2rem;
 
-            a.subdomain-head-a {
-                position: relative;
-                display: flex;
-                border: none;
-                text-decoration: none;
-
-                ::hover {
-                    border: none;
-                    text-decoration: none;
-                }
-
-                .subdomain-icon {
-                    display: inline-block;
-                    height: 2rem;
-                    width: 2rem;
-                    min-width: 2rem;
-
-                    img {
-                        display: block;
-                        height: 1.8rem;
-                    }
-                }
-
-                .subdomain-title {
-                    display: inline-block;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    overflow: hidden;
-                }
-            }
+          img {
+            display: block;
+            height: 1.8rem;
+          }
         }
+
+        .subdomain-title {
+          display: inline-block;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
     }
+  }
 }
