@@ -90,6 +90,7 @@ div > pre {
   table {
     padding: 0;
     border: 0;
+
     td pre {
       overflow: visible; /* Fixed iOS safari overflow-x */
       word-break: normal; /* Fixed iOS safari linenos code break */
