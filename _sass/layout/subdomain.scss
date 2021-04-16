@@ -6,16 +6,23 @@
         display: flex;
 
         h6 {
+            display: flex;
             height: 1rem;
             color: #888888;
             font-size: 0.8rem;
             margin-bottom: 0;
+            max-width: 100%;
             
             a.subdomain-a {
+                position: relative;
                 height: 1rem;
                 color: #888888;
+                max-width: 100%;
                 border: none;
                 text-decoration: none;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
     }
@@ -41,6 +48,7 @@
                     display: inline-block;
                     height: 2rem;
                     width: 2rem;
+                    min-width: 2rem;
 
                     img {
                         display: block;
@@ -50,6 +58,9 @@
 
                 .subdomain-title {
                     display: inline-block;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
             }
         }
