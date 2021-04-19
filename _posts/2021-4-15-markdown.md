@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
 这里是重新启用了 `Markdown` 语法的段落，比如：**加粗**，*斜体*。
 </details></p>
 
-**注意，对 [Kramdown](https://kramdown.gettalong.org/) 不起作用。**但是 Kramdown 有自己的办法，你可以在 HTML 标签中增加一条属性 `markdown="1"` 对该标签内部启用 Markdown 语法解析，此时不需要空行即可。上述的例子在 Kramdown 下应写为：
+**注意，对 [kramdown](https://kramdown.gettalong.org/) 不起作用。**但是 kramdown 有自己的办法，你可以在 HTML 标签中增加一条属性 `markdown="1"` 对该标签内部启用 Markdown 语法解析，此时不需要空行即可。上述的例子在 kramdown 下应写为：
 
 ```markdown
 <details markdown="1">
