@@ -66,6 +66,7 @@ div > pre {
   }
 
   overflow: auto;
+
   .lineno {
     margin-left: 0.2rem;
     padding-right: 0.5rem;
@@ -87,6 +88,7 @@ div > pre {
     line-height: 1.4rem;
     word-wrap: normal; /* Fixed Safari overflow-x */
   }
+
   table {
     padding: 0;
     border: 0;
@@ -96,6 +98,7 @@ div > pre {
       word-break: normal; /* Fixed iOS safari linenos code break */
     }
   }
+
   td {
     padding: 0;
     border: 0;
