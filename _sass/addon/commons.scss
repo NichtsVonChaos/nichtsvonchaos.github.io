@@ -301,7 +301,7 @@ footer {
 
   // [scroll-focus] added by `smooth-scroll.js`
   @at-root sup:target:not([scroll-focus]),
-  sup[scroll-focus="true"] > a#{&} {
+    sup[scroll-focus="true"] > a#{&} {
     background-color: var(--footnote-target-bg);
   }
 }
@@ -985,6 +985,7 @@ $sidebar-display: "sidebar-display";
 
 #search-results {
   padding-bottom: 6rem;
+
   a {
     &:hover {
       @extend %link-hover;
