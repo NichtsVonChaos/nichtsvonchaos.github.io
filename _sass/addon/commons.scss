@@ -380,6 +380,7 @@ footer {
 .post-meta {
   font-size: 0.85rem;
   word-spacing: 1px;
+
   a {
     @extend %link-color;
     @extend %link-underline;
