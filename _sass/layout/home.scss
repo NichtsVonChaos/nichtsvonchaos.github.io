@@ -4,6 +4,7 @@
 
 .pagination {
   font-size: 1rem;
+
   a:hover {
     text-decoration: none;
   }
@@ -25,10 +26,12 @@
       border: 1px solid var(--btn-paginator-border-color);
       font-family: "Lato", sans-serif;
       background-color: var(--button-bg);
+
       &:hover {
         background-color: var(--btn-paginator-hover-color);
       }
     }
+
     &.active {
       .page-link {
         background-color: var(--btn-active-bg);
@@ -37,6 +40,7 @@
         color: var(--btn-text-color);
       }
     }
+
     &.disabled {
       cursor: not-allowed;
 
@@ -51,6 +55,7 @@
     &:last-child .page-link {
       border-radius: 50%;
     }
+
     &:not(:last-child) {
       margin-right: 0.7rem;
     }
@@ -79,6 +84,7 @@
       i {
         font-size: 0.73rem;
       }
+
       span:not(:last-child) {
         margin-right: 1.2rem;
       }
@@ -88,6 +94,7 @@
       margin-top: 0.6rem;
       margin-bottom: 0.6rem;
       color: var(--post-list-text-color);
+
       > p {
         /* Make preview shorter on the homepage */
         margin: 0;
@@ -105,6 +112,7 @@
         padding-left: 3px;
         color: var(--pin-color);
       }
+
       > span {
         display: none;
       }

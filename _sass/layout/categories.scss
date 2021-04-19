@@ -23,9 +23,11 @@
     border-left: none;
     border-right: none;
     padding-left: 2rem;
+
     > i {
       @extend %category-icon-color;
     }
+
     &:first-child {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
@@ -43,6 +45,7 @@
   border-radius: 50%;
   text-align: center;
   color: #6c757d !important;
+
   > i.iconfont {
     position: relative;
     height: 0.7rem;

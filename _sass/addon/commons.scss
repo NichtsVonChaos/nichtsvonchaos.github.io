@@ -301,7 +301,7 @@ footer {
 
   // [scroll-focus] added by `smooth-scroll.js`
   @at-root sup:target:not([scroll-focus]),
-    sup[scroll-focus="true"] > a#{&} {
+  sup[scroll-focus="true"] > a#{&} {
     background-color: var(--footnote-target-bg);
   }
 }
@@ -1715,7 +1715,7 @@ $sidebar-display: "sidebar-display";
 
 details {
   border-radius: 0.5rem;
-  border: solid #333333;
+  border: solid #333;
   margin: 0;
   margin-bottom: 1rem;
   padding: 0 1rem;
