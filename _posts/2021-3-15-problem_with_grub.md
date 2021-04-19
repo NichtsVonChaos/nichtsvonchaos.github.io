@@ -25,7 +25,7 @@ sudo manjaro-chroot -a
 
 等待一段时间后，会出现以下提示：
 
-```
+```text
 ==> detected systems:
 –> 0) ManjaroLinux
 ==>Select system to mount [0-0]
@@ -33,7 +33,7 @@ sudo manjaro-chroot -a
 
 选 0 之后却出现：
 
-```
+```text
 ==>ERROR: You cant mount 0!
 ```
 
