@@ -1,8 +1,8 @@
 ---
 title: Markdown 一些奇技淫巧
 date: 2021-4-15 22:00:31 +0800
-categories: [Miscellanea, Markdown]
-tags: [markdown]     # TAG names should always be lowercase
+categories: [教程, Markdown]
+tags: [markdown, 教程]     # TAG names should always be lowercase
 ---
 
 ## 列表内分段

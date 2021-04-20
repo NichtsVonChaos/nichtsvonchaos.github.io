@@ -1,7 +1,7 @@
 ---
 title: 记一次 Manjaro 下 Grub 炸裂的问题
 date: 2021-3-15 00:51:43 +0800
-categories: [Linux, Problem]
+categories: [杂记, Linux]
 tags: [manjaro, linux]     # TAG names should always be lowercase
 ---
 
