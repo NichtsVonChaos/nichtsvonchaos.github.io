@@ -39,7 +39,7 @@ html[mode="dark"] {
   padding: 1.5rem;
 }
 
-$code-font-size: 0.85rem;
+$code-font-size: 85%;
 
 div > pre {
   @extend %code-snippet-bg;
