@@ -108,18 +108,18 @@ Trait 是 Rust 中的接口抽象方式，类似于 Java 的 Interface 但是又
 ```rust
 trait TraitName {
     type TypeAlias;
-    fn function_in_trait(args);
+    fn method_in_trait(args);
 }
 ```
 
-`type` 关键字定义 Trait 内的关联类型，可以用在 Trait 内的函数参数或者返回值中。
+`type` 关键字定义 Trait 内的关联类型，可以用在 Trait 内的方法参数或者返回值中。
 
 为一个结构体实现某个 Trait 可以使用 `impl`，例如：
 
 ```rust
 impl MyTrait for MyStruct {
     type ReturnType = i32;
-    fn my_func() -> ReturnType {
+    fn my_method() -> ReturnType {
         1
     }
 }
