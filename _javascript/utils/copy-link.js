@@ -13,6 +13,6 @@ function copyLink(url) {
   document.execCommand("copy");
   $temp.remove();
 
-  alert("Link copied successfully!");
+  alert("链接复制成功！");
 
 }
