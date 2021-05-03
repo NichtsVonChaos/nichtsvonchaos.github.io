@@ -5,7 +5,7 @@
 
 $(function() {
 
-  const IMG_SCOPE = '#main > div.row:first-child > div:first-child';
+  const IMG_SCOPE = 'div.row';
 
   if ($(`${IMG_SCOPE} img`).length <= 0 ) {
     return;
