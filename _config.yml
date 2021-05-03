@@ -27,7 +27,7 @@ url: 'https://nihil.cc'
 author: Nichts Hsu    # 全名
 
 github:
-  username: NichtsVonChaos     # Github 用户名
+  username: NichtsHsu     # Github 用户名
 
 twitter:
   username: Still_Nihil       # 推特用户名
@@ -39,7 +39,7 @@ social:
     # 第一个链接将会作为版权所有者的链接
     - https://nihil.cc/
     - https://twitter.com/Still_Nihil      # 推特主页
-    - https://github.com/NichtsVonChaos       # Github 主页
+    - https://github.com/NichtsHsu       # Github 主页
     # 取消注释以添加更多链接
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username

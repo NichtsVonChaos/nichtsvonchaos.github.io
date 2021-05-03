@@ -8,7 +8,7 @@ order: 5
 
 * Nihil（最常用ID）
 * Nichts Hsu（Hsu=徐，常用作英文名来署名，以及当Nihil已被注册时的替代）
-* NichtsVonChaos（早期ID，多用于早期注册的账号，如Google，Github）
+* NichtsVonChaos（早期ID，多用于早期注册的账号，如Google）
 
 ## 已弃用ID
 
@@ -19,7 +19,7 @@ order: 5
 * QQ：不想被打扰，不公开QQ，也不希望没事来加QQ。
 * Twitter：[@Still_Nihil](https://twitter.com/Still_Nihil)
 * Gmail：<mailto:NichtsVonChaos@gmail.com>
-* Github：[NichtsVonChaos](https://github.com/NichtsVonChaos)
+* Github：[NichtsHsu](https://github.com/NichtsHsu)
 * Discord：Nihil#4200
 * Bilibili：[-NIHIL-](https://space.bilibili.com/6631803)
 * 贴吧：[@towanoICIT](https://tieba.baidu.com/home/main?un=towanoICIT)（几乎弃用状态）
