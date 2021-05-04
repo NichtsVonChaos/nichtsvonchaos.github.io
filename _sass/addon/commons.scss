@@ -664,13 +664,13 @@ $sidebar-display: "sidebar-display";
     &:hover {
       @include no-text-decoration;
 
-      color: #fff;
+      color: var(--sidebar-hover-a);
     }
   }
 
   #avatar {
     &:hover > a {
-      border-color: #fff;
+      border-color: var(--sidebar-hover-a);
     }
 
     > a {
@@ -736,13 +736,13 @@ $sidebar-display: "sidebar-display";
 
     &:hover {
       .nav-link {
-        color: #f8f9facf;
+        color: var(--sidebar-hover-nav-link);
       }
     }
 
     &.active {
       .nav-link {
-        color: #fcfcfc;
+        color: var(--sidebar-active-nav-link);
       }
     }
   }
@@ -847,7 +847,7 @@ $sidebar-display: "sidebar-display";
 
     a:hover,
     #mode-toggle-wrapper i:hover {
-      color: #fff;
+      color: var(--sidebar-hover-a);
     }
   } // .sidebar-bottom
 } // #sidebar

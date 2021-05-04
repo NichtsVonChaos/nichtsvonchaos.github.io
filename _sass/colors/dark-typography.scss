@@ -34,7 +34,11 @@
 
   /* Sidebar */
   --nav-cursor-color: rgb(183, 182, 182);
-  --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
+  --sidebar-a: rgba(255, 255, 255, 0.5);
+  --sidebar-hover-a: #fff;
+  --sidebar-hover-nav-link: #f8f9facf;
+  --sidebar-active-nav-link: #fcfcfc;
+  --sidebar-bg: radial-gradient(circle, #292828 0%, #242424 100%);
 
   /* Top Bar */
   --topbar-text-color: var(--text-color);

@@ -26,8 +26,12 @@
   --checkbox-checked-color: #07a8f7;
 
   /* Sidebar */
-  --sidebar-bg: radial-gradient(circle, rgba(42, 30, 107, 1) 0%, rgba(35, 37, 46, 1) 100%);
-  --nav-cursor-color: #fcfcfc;
+  --sidebar-a: rgba(0, 0, 0, 0.5);
+  --sidebar-hover-a: #000;
+  --sidebar-hover-nav-link: #070605cf;
+  --sidebar-active-nav-link: #030303;
+  --sidebar-bg: radial-gradient(circle, #f0f0f0 0%, #fcfcfc 100%);
+  --nav-cursor-color: #2b2b2b;
 
   /* Topbar */
   --topbar-wrapper-bg: white;

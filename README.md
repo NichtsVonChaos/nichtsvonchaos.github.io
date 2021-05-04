@@ -16,6 +16,7 @@
 * 添加了 `<details>` 标签的样式。
 * 使用改自 [`just the docs`](https://github.com/pmarsceill/just-the-docs) 的表格样式。
 * 优化了代码段 scss，使其能够适应表格内嵌代码段。
+* 由于不喜欢原版左侧边栏的暗蓝色背景，修改为白色。
 
 如果喜欢我这个定制化的版本，欢迎 Fork，但是请修改 `_config.yml` 中的 `google_site_verification`, `google_analytics` 的 `id` 以及 `valine` 的 `leancloud_appid` 和 `leancloud_appkey`，以及 `CNAME` 文件中配置的域名，请勿使用我的配置。
 
