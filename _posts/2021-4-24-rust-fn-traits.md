@@ -271,7 +271,7 @@ let num_2 = get_num(2);
 
 ### 总结
 
-任何一个函数都实现了 `FnOnce`, `FnMut`, `Fn`。
+任何一个函数都实现了 `FnOnce`, `FnMut`, `Fn`, `Copy`。
 
 对于闭包：
 
@@ -321,7 +321,7 @@ vec_push(5);
 vec.push(6);
 ```
 
-`vec.push(6)` 就会报错，提示你 `` borrow of moved value: `vec` ``。
+`vec.push(6)` 就会报错，提示你 `` borrow of moved value: `vec` ``。在第一个例子中，闭包在其结构体中只储存 `vec` 的可变引用，而在第二个例子中，闭包会转移 `vec` 的所有权保存在自己的结构体中。
 
 更多的情况下，`move` 需要处理的是生命周期的问题。我们来看到下面的例子：
 
@@ -383,7 +383,7 @@ just_print(2);
 ```rust
 #[derive(Copy, Clone)]
 struct MyClosure<'a> {
-    _vec: &'a Vec<i32>,
+    captured_data: &'a Vec<i32>,
 }
 ```
 
@@ -399,7 +399,7 @@ struct MyClosure<'a> {
 impl<'a> FnOnce<(usize,)> for MyClosure<'a> {
     type Output = ();
     extern "rust-call" fn call_once(self, (index,): (usize,)) -> Self::Output {
-        println!("{}", self._vec[index]);
+        println!("{}", self.captured_data[index]);
     }
 }
 ```
@@ -410,20 +410,20 @@ impl<'a> FnOnce<(usize,)> for MyClosure<'a> {
 
 `extern "rust-call"` 是一种定义将接收的元组扩展为函数参数调用的 ABI，我们可以不去理会它，照着抄。
 
-最后，我们在 `call_once` 的函数体中打印 `_vec` 的第 `index` 个元素。
+最后，我们在 `call_once` 的函数体中打印 `captured_data` 的第 `index` 个元素。
 
 同理，我们再给结构体实现 `FnMut` 和 `Fn`：
 
 ```rust
 impl<'a> FnMut<(usize,)> for MyClosure<'a> {
     extern "rust-call" fn call_mut(&mut self, (index,): (usize,)) -> Self::Output {
-        println!("{}", self._vec[index]);
+        println!("{}", self.captured_data[index]);
     }
 }
 
 impl<'a> Fn<(usize,)> for MyClosure<'a> {
     extern "rust-call" fn call(&self, (index,): (usize,)) -> Self::Output {
-        println!("{}", self._vec[index]);
+        println!("{}", self.captured_data[index]);
     }
 }
 ```
@@ -433,7 +433,7 @@ impl<'a> Fn<(usize,)> for MyClosure<'a> {
 ```rust
 fn main() {
     let vec = vec![1, 2, 3];
-    let just_print = MyClosure { _vec: &vec };
+    let just_print = MyClosure { captured_data: &vec };
     just_print(0);
     just_print(1);
     just_print(2);
