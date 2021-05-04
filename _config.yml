@@ -62,7 +62,7 @@ iconfont_css:
   # - 
 
 google_analytics:
-  id: ''              # 填入你的 Google Analytics ID
+  id: 'G-RK9LRGVP0T'              # 填入你的 Google Analytics ID
   # Google Analytics 页面浏览量开关
   pv:
     proxy_endpoint:   # 填入 Google App Engine 的 Google Analytics superProxy 端点
