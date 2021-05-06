@@ -16,13 +16,12 @@ order: 5
 
 ## 个人账号
 
-* QQ：不想被打扰，不公开QQ，也不希望没事来加QQ。
+* QQ：不公开。
 * Twitter：[@Still_Nihil](https://twitter.com/Still_Nihil){:target="_blank"}
 * Gmail：<mailto:NichtsVonChaos@gmail.com>
 * Github：[NichtsHsu](https://github.com/NichtsHsu){:target="_blank"}
 * Discord：Nihil#4200
 * Bilibili：[-NIHIL-](https://space.bilibili.com/6631803){:target="_blank"}
-* 贴吧：[@towanoICIT](https://tieba.baidu.com/home/main?un=towanoICIT){:target="_blank"}（几乎弃用状态）
-* Steam：[Nihil](https://steamcommunity.com/id/NichtsHsu/){:target="_blank"}（来加个好友罢，我steam根本没几个好友（悲））
+* Steam：[Nihil](https://steamcommunity.com/id/NichtsHsu/){:target="_blank"}
 
 大部分账号都是隔三差五看一次，很久才回复是很正常的。
