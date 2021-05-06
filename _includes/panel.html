@@ -53,7 +53,7 @@
       <ul class="post-content pl-0 pb-1 ml-1 mt-2">
 
         {% for external_link in site.data.external_links %}
-        <li><a href="{{ external_link.link }}">
+        <li><a href="{{ external_link.link }}" target="_blank">
             {% if external_link.automatic_name %}
             {% if external_link.use_iconfont %}
             <i class="iconfont {{ external_link.icon }}"></i>
