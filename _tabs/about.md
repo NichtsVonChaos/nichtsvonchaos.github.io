@@ -1,5 +1,5 @@
 ---
-title: 关于/About
+title: 关于
 icon: iconfont icon-info
 order: 5
 ---

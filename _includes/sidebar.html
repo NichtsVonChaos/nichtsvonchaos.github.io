@@ -8,13 +8,13 @@
     <div id="avatar">
       <a href="{{ '/' | relative_url }}" alt="avatar" class="mx-auto">
         {% capture avatar_url %}
-          {%- if site.avatar contains '://' -%}
-            {{ site.avatar }}
-          {%- elsif site.img_cdn != '' and site.img_cdn -%}
-            {{ site.avatar | prepend: site.img_cdn }}
-          {%- else -%}
-            {{ site.avatar | relative_url }}
-          {%- endif -%}
+        {%- if site.avatar contains '://' -%}
+        {{ site.avatar }}
+        {%- elsif site.img_cdn != '' and site.img_cdn -%}
+        {{ site.avatar | prepend: site.img_cdn }}
+        {%- else -%}
+        {{ site.avatar | relative_url }}
+        {%- endif -%}
         {% endcapture %}
         <img src="{{ avatar_url }}" alt="avatar" onerror="this.style.display='none'">
       </a>
@@ -33,7 +33,12 @@
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
       <a href="{{ '/' | relative_url }}" class="nav-link">
         <i class="fa-fw iconfont icon-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>{{ "主页/HOME" }}</span>
+        <span>
+          <div class="sidebar-item">
+            <div class="sidebar-item-title">{{ "主页" }}</div>
+            <div class="sidebar-item-subtitle">{{ "HOME" }}</div>
+          </div>
+        </span>
       </a>
     </li>
     <!-- the real tabs -->
@@ -41,7 +46,12 @@
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
       <a href="{{ tab.url | relative_url }}" class="nav-link">
         <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>{{ tab.title | upcase }}</span>
+        <span>
+          <div class="sidebar-item">
+            <div class="sidebar-item-title">{{ tab.title }}</div>
+            <div class="sidebar-item-subtitle">{{ tab.url | replace:'/','' | upcase }}</div>
+          </div>
+        </span>
       </a>
     </li> <!-- .nav-item -->
     {% endfor %}
@@ -51,39 +61,39 @@
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center">
 
     {% for entry in site.data.contact %}
-      {% capture url %}
-        {%- if entry.type == 'github' -%}
-          https://github.com/{{ site.github.username }}
-        {%- elsif entry.type == 'twitter' -%}
-          https://twitter.com/{{ site.twitter.username }}
-        {%- elsif entry.type == 'email' -%}
-          {% assign email = site.social.email | split: '@' %}
-          javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-        {%- elsif entry.type == 'rss' -%}
-          {{ "/feed.xml" | relative_url }}
-        {%- else -%}
-          {{ entry.url }}
-        {%- endif -%}
-      {% endcapture %}
+    {% capture url %}
+    {%- if entry.type == 'github' -%}
+    https://github.com/{{ site.github.username }}
+    {%- elsif entry.type == 'twitter' -%}
+    https://twitter.com/{{ site.twitter.username }}
+    {%- elsif entry.type == 'email' -%}
+    {% assign email = site.social.email | split: '@' %}
+    javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+    {%- elsif entry.type == 'rss' -%}
+    {{ "/feed.xml" | relative_url }}
+    {%- else -%}
+    {{ entry.url }}
+    {%- endif -%}
+    {% endcapture %}
 
-      {% if url %}
-      <a href="{{ url }}" aria-label="{{ entry.type }}"
-        {% unless site.theme_mode %}class="order-{{ forloop.index | plus: 2 }}"{% endunless %}
-        {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
-        <i class="{{ entry.icon }}"></i>
-      </a>
-      {% endif %}
+    {% if url %}
+    <a href="{{ url }}" aria-label="{{ entry.type }}" {% unless site.theme_mode
+      %}class="order-{{ forloop.index | plus: 2 }}" {% endunless %} {% unless entry.noblank %}target="_blank"
+      rel="noopener" {% endunless %}>
+      <i class="{{ entry.icon }}"></i>
+    </a>
+    {% endif %}
 
     {% endfor %}
 
     {% unless site.theme_mode %}
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border order-2"></span>
-      {% endif %}
+    {% if site.data.contact.size > 0 %}
+    <span class="icon-border order-2"></span>
+    {% endif %}
 
-      <span id="mode-toggle-wrapper" class="order-1">
-        {% include mode-toggle.html %}
-      </span>
+    <span id="mode-toggle-wrapper" class="order-1">
+      {% include mode-toggle.html %}
+    </span>
     {% endunless %}
 
   </div> <!-- .sidebar-bottom -->
