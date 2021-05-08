@@ -4,15 +4,15 @@ icon: iconfont icon-info
 order: 5
 ---
 
-## 常用ID
+## 常用 ID
 
-* Nihil（最常用ID）
-* Nichts Hsu（Hsu=徐，常用作英文名来署名，以及当Nihil已被注册时的替代）
-* NichtsVonChaos（早期ID，多用于早期注册的账号，如Google）
+* Nihil（最常用 ID）
+* Nichts Hsu（Hsu=徐，常用作英文名来署名，以及当 Nihil 已被注册时的替代）
+* NichtsVonChaos（早期 ID，多用于早期注册的账号，如 Google）
 
 ## 已弃用ID
 
-* towanoICIT（略称icit，仅在与I Wanna圈有关联时使用）
+* towanoICIT（略称 icit，仅在与 I Wanna 圈有关联时使用）
 
 ## 个人账号
 
