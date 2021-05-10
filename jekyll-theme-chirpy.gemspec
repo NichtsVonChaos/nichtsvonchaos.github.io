@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-chirpy"
-  spec.version       = "4.0.0"
+  spec.version       = "4.0.1"
   spec.authors       = ["Cotes Chung"]
   spec.email         = ["cotes.chung@gmail.com"]
 
@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f|
-    f.match(%r!^((assets\/(css|img|js\/[a-z])|_(includes|layouts|sass|config|data|tabs|plugins))|README|LICENSE|index)!i)
+    f.match(%r!^((_(includes|layouts|sass|data|tabs|plugins)|assets)\/|_config|README|LICENSE|index)!i)
   }
 
   spec.metadata = {
