@@ -726,6 +726,7 @@ $sidebar-display: "sidebar-display";
     letter-spacing: 1px;
     display: table-cell;
     vertical-align: middle;
+    margin: 0 auto;
   }
 
   .nav-item {
@@ -786,7 +787,7 @@ $sidebar-display: "sidebar-display";
 
     @for $i from 1 through $tab-count {
       $offset: $tab-count - $i;
-      $top: -$offset * $tab-height + $tab-cursor-height / 2;
+      $top: -($offset - 0.5) * $tab-height - $tab-cursor-height / 2;
 
       @if $i < $tab-count {
         > li.active:nth-child(#{$i}),
@@ -827,10 +828,10 @@ $sidebar-display: "sidebar-display";
         @include sidebar-links;
 
         margin: 0;
-        font-size: 1.05rem;
+        font-size: 1.2rem;
         text-align: center;
         position: relative;
-        bottom: 1px;
+        padding: 1px;
       }
     }
 
@@ -1568,29 +1569,24 @@ $sidebar-display: "sidebar-display";
       margin-bottom: 1rem;
 
       &.text-center {
-        text-align: left !important;
-      }
-
-      %profile-ml {
-        margin-left: 4.5rem;
+        text-align: center !important;
       }
 
       #avatar {
-        @extend %profile-ml;
+        display: flex;
+        justify-content: center;
 
         > a {
           width: 6.2rem;
           height: 6.2rem;
 
           &.mx-auto {
-            margin-left: 0 !important;
+            margin: 0 !important;
           }
         }
       }
 
       .site-title {
-        @extend %profile-ml;
-
         a {
           font-size: 1.7rem;
           letter-spacing: 1px;
@@ -1598,8 +1594,6 @@ $sidebar-display: "sidebar-display";
       }
 
       .site-subtitle {
-        @extend %profile-ml;
-
         word-spacing: 0;
         margin-top: 0.3rem;
       }
@@ -1618,22 +1612,20 @@ $sidebar-display: "sidebar-display";
         text-align: left;
 
         .nav-link {
-          > span {
-            letter-spacing: 3px;
-          }
+          > div {
+            > i {
+              @include icon-round(2rem);
 
-          > i {
-            @include icon-round(1.65rem);
+              font-size: 1.2rem;
+              padding-top: 1px;
+              padding-left: 1px;
+              position: relative;
+              bottom: 1px;
+              text-align: center;
 
-            line-height: 1.5rem;
-            font-size: 0.6rem;
-            padding-top: 1px;
-            padding-left: 1px;
-            position: relative;
-            bottom: 1px;
-
-            &.unloaded {
-              display: inline-block !important;
+              &.unloaded {
+                display: inline-block !important;
+              }
             }
           }
         }
@@ -1658,21 +1650,17 @@ $sidebar-display: "sidebar-display";
       i {
         @include icon-round(2rem);
 
-        padding-top: 0.44rem;
-        margin-top: 0.7rem; // multi line space
-        bottom: 0;
+        font-size: 1.2rem;
+        display: inline-block;
+        padding: 1px;
+
+        ::before {
+          vertical-align: middle;
+        }
       }
 
       #mode-toggle-wrapper {
         width: 3rem;
-
-        i {
-          top: 11px;
-        }
-      }
-
-      .icon-border {
-        top: 26px;
       }
     } // .sidebar-bottom
   } // #sidebar
@@ -1747,23 +1735,31 @@ details {
   }
 }
 
-.sidebar-item {
-  .sidebar-item-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: .25rem;
-    text-indent: .25rem;
-    font-size: 1rem;
-    max-height: 1.25rem;
-  }
-  .sidebar-item-subtitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: .1rem;
-    text-indent: .1rem;
-    font-size: .75rem;
-    max-height: .75rem;
+.sidebar-content {
+  display: flex;
+  justify-content: center;
+  
+  .sidebar-item {
+    display: inline-block;
+    width: 70%;
+
+    .sidebar-item-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.25rem;
+      text-indent: 0.25rem;
+      font-size: 1rem;
+      max-height: 1.25rem;
+    }
+    .sidebar-item-subtitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.1rem;
+      text-indent: 0.1rem;
+      font-size: 0.75rem;
+      max-height: 0.75rem;
+    }
   }
 }

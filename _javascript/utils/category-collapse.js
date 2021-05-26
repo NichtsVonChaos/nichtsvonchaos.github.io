@@ -11,7 +11,7 @@ $(function() {
   collapse.on("hide.bs.collapse", function () { /* Bootstrap collapse events. */
     const parentId = parentPrefix + $(this).attr("id").substring(childPrefix.length);
     if (parentId) {
-      $(`#${parentId} .iconfont.icon-FolderOpen-1`).attr("class", "iconfont icon-folder fa-fw");
+      $(`#${parentId} .iconfont.icon-FolderOpen-1`).attr("class", "iconfont icon-folder");
       $(`#${parentId} i.iconfont`).addClass("rotate");
       $(`#${parentId}`).removeClass("hide-border-bottom");
     }
@@ -21,7 +21,7 @@ $(function() {
   collapse.on("show.bs.collapse", function() {
     const parentId = parentPrefix + $(this).attr("id").substring(childPrefix.length);
     if (parentId) {
-      $(`#${parentId} .iconfont.icon-folder`).attr("class", "iconfont icon-FolderOpen-1 fa-fw");
+      $(`#${parentId} .iconfont.icon-folder`).attr("class", "iconfont icon-FolderOpen-1");
       $(`#${parentId} i.iconfont`).removeClass("rotate");
       $(`#${parentId}`).addClass("hide-border-bottom");
     }

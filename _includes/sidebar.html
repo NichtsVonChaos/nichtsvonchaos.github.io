@@ -32,26 +32,26 @@
     <!-- home -->
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
       <a href="{{ '/' | relative_url }}" class="nav-link">
-        <i class="fa-fw iconfont icon-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>
+        <div class="sidebar-content">
+          <i class="iconfont icon-home unloaded"></i>
           <div class="sidebar-item">
             <div class="sidebar-item-title">{{ "主页" }}</div>
             <div class="sidebar-item-subtitle">{{ "HOME" }}</div>
           </div>
-        </span>
+        </div>
       </a>
     </li>
     <!-- the real tabs -->
     {% for tab in site.tabs %}
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
       <a href="{{ tab.url | relative_url }}" class="nav-link">
-        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>
+        <div class="sidebar-content">
+          <i class="{{ tab.icon }} unloaded"></i>
           <div class="sidebar-item">
             <div class="sidebar-item-title">{{ tab.title }}</div>
             <div class="sidebar-item-subtitle">{{ tab.url | replace:'/','' | upcase }}</div>
           </div>
-        </span>
+        </div>
       </a>
     </li> <!-- .nav-item -->
     {% endfor %}

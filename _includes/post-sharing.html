@@ -12,11 +12,11 @@
       {% assign link = share.link | replace: 'TITLE', title | replace: 'URL', url %}
         <a href="{{ link }}" data-toggle="tooltip" data-placement="top"
           title="{{ share.type }}" target="_blank" rel="noopener" aria-label="{{ share.type }}">
-          <i class="fa-fw {{ share.icon }}"></i>
+          <i class="{{ share.icon }}"></i>
         </a>
     {% endfor %}
 
-    <i class="fa-fw iconfont icon-link small" onclick="copyLink()"
+    <i class="iconfont icon-link small" onclick="copyLink()"
         data-toggle="tooltip" data-placement="top" title="复制链接"></i>
 
   </span>
