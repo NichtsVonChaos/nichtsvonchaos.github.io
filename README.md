@@ -12,7 +12,7 @@
 * 右侧边栏添加了外部链接块，参见 `_data/external_links.yml`。
 * 可以自由地控制在帖子中显示右侧边栏哪些块。参见 `_config.yml` 里的 `panel`。
 * 添加滚动条样式以适应主题，而不是将其隐藏。
-* 添加了子域页。参见 `_data/subdomain.yml`。
+* 添加了子域页。参见 `_data/subdomain.yml`。不需要该页面的情况下删除 `_tabs/subdomain.md` 即可。
 * 添加了 `<details>` 标签的样式。
 * 使用改自 [`just the docs`](https://github.com/pmarsceill/just-the-docs) 的表格样式。
 * 优化了代码段 scss，使其能够适应表格内嵌代码段。
