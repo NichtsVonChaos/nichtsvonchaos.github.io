@@ -323,6 +323,8 @@ vec.push(6);
 
 `vec.push(6)` 就会报错，提示你 `` borrow of moved value: `vec` ``。在第一个例子中，闭包在其结构体中只储存 `vec` 的可变引用，而在第二个例子中，闭包会转移 `vec` 的所有权保存在自己的结构体中。
 
+> 值得注意的是，由于此时闭包的结构体持有 `vec` 而不是持有它的不可变引用，因此**闭包不会自动实现 `Copy`**，除非被 `move` 的类型实现了 `Copy` 闭包才会自动实现 `Copy`。
+
 更多的情况下，`move` 需要处理的是生命周期的问题。我们来看到下面的例子：
 
 ```rust
@@ -448,39 +450,48 @@ fn main() {
 3
 ```
 
-## ZST 闭包
+### 理解 `move` 关键字
 
-这是一种特殊类型的闭包，它不捕捉任何上下文变量，因此它的结构体大小是 0，即 Zero Sized Type。
-
-对于编译器实现的闭包，我们可能体会不到 ZST 闭包和一般的闭包有啥不同，但是，如果是我们自己实现的 ZST 闭包：
+通过自己实现闭包结构体，我们能够更加清晰地理解 `move` 为何物。在本例中，如果要模拟 `move`，实际上就等同于修改 `MyClosure` 的定义为：
 
 ```rust
-struct JustPrint;
-
-impl FnOnce<(i32,)> for JustPrint {
-    type Output = ();
-    extern "rust-call" fn call_once(self, (num,): (i32,)) -> Self::Output {
-        println!("{}", num);
-    }
-}
-
-impl FnMut<(i32,)> for JustPrint {
-    extern "rust-call" fn call_mut(&mut self, (num,): (i32,)) -> Self::Output {
-        println!("{}", num);
-    }
-}
-
-impl Fn<(i32,)> for JustPrint {
-    extern "rust-call" fn call(&self, (num,): (i32,)) -> Self::Output {
-        println!("{}", num);
-    }
-}
-
-fn main() {
-    JustPrint(0);
-    JustPrint(1);
-    JustPrint(2);
+#[derive(Clone)]
+struct MyClosure {
+    captured_data: Vec<i32>,
 }
 ```
 
-你会发现特殊的地方来了：我们可以直接通过 `JustPrint(0)` 的方式来调用闭包函数，我们甚至没有实例化一个 `JustPrint` 的对象！
+闭包结构体持有所有权，且不自动实现 `Copy`（当闭包结构体内所有类型实现了 `Copy` 的类型时仍然自动实现 `Copy`）。
+
+实现 `Fn` traits 只需要删除生命周期参数即可：
+
+```rust
+impl FnOnce<(usize,)> for MyClosure {
+    type Output = ();
+    extern "rust-call" fn call_once(self, (index,): (usize,)) -> Self::Output {
+        println!("{}", self.captured_data[index]);
+    }
+}
+
+impl FnMut<(usize,)> for MyClosure {
+    extern "rust-call" fn call_mut(&mut self, (index,): (usize,)) -> Self::Output {
+        println!("{}", self.captured_data[index]);
+    }
+}
+
+impl Fn<(usize,)> for MyClosure {
+    extern "rust-call" fn call(&self, (index,): (usize,)) -> Self::Output {
+        println!("{}", self.captured_data[index]);
+    }
+}
+```
+
+在测试时，需要将 `vec` 移入结构体内而不是获取它的引用：
+
+```rust
+    let vec = vec![1, 2, 3];
+    let just_print = MyClosure { captured_data: vec };
+    just_print(0);
+    just_print(1);
+    just_print(2);
+```
