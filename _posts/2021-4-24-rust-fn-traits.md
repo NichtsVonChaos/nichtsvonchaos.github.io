@@ -5,55 +5,7 @@ categories: [杂记 , Rust]
 tags: [rust, closure, trait]     # TAG names should always be lowercase
 ---
 
-## 概念
-
-### 函数
-
-在 Rust 中，函数通常以下面这种形式定义：
-
-```rust
-fn function_name(arg1: type1, arg2: type2) -> return_type {
-    // function body
-}
-```
-
-以 `fn` 关键字作为函数定义的标志，在其后依次写下**函数名**，**参数列表**，**返回值类型**和**函数体**。其中，`-> return_type` 可以不写，此时 Rust 视函数的返回类型为 `()`。
-
-与 C++ 不同的是，Rust 允许你在函数中定义函数：
-
-```rust
-fn outside_function() {
-    fn inside_function() {
-
-    }
-}
-```
-
-同时，在 Rust 中，函数名享有与变量相同的待遇，它可以赋值给变量、作为另一个函数的参数、作为另一个函数的返回值、作为泛型参数等等。
-
-由于 Rust 是强类型语言，因此函数也有确定的类型。举个例子，上述函数 `function_name` 它的类型是 `fn(type1, type2) -> return_type`。
-
-下面是一个将函数名当作变量来操作的例子：
-
-```rust
-fn print_and_return(num: i32) -> i32 {
-    println!("{}", num);
-    num
-}
-
-fn just_return(f: fn(i32) -> i32) -> fn(i32) -> i32 {
-    f
-}
-
-fn main() {
-    let func: fn(i32) -> i32 = print_and_return;
-    just_return(func)(12);
-}
-```
-
-运行之后，控制台将打印 `12`。
-
-### 闭包
+## 闭包
 
 闭包，或者又名匿名函数，lambda 函数，它在官方文档中被定义为**可以捕获环境的匿名函数**。通常，闭包的定义具有以下的形式：
 
@@ -100,81 +52,6 @@ Rust 编译器会明确的告诉你两个闭包的类型不同，即使他们有
 {% endraw %}
 
 那么闭包究竟是什么类型呢？事实上，闭包的类型是在编译期间生成的独一无二的结构体。关于更详细的内容，我们将在后面探讨。
-
-### Trait
-
-Trait 是 Rust 中的接口抽象方式，类似于 Java 的 Interface 但是又不完全相同。一个 Trait 的定义通常如下所示：
-
-```rust
-trait TraitName {
-    type TypeAlias;
-    fn method_in_trait(args);
-}
-```
-
-`type` 关键字定义 Trait 内的关联类型，可以用在 Trait 内的方法参数或者返回值中。
-
-为一个结构体实现某个 Trait 可以使用 `impl`，例如：
-
-```rust
-impl MyTrait for MyStruct {
-    type ReturnType = i32;
-    fn my_method() -> ReturnType {
-        1
-    }
-}
-```
-
-有关 Trait 更详细的介绍请参考相关书籍，这里仅列出基本概念以方便后面探讨 `Fn` Traits。
-
-### 泛型
-
-泛型类似于 C++ 中的模板，可以在写代码时使用“未知的类型”这一概念，等到编译时再根据具体的调用来实例化，这非常适合编写那些只有类型不同的代码。例如：
-
-```rust
-fn just_print<T: std::fmt::Display>(arg: T) {
-    println!("{}", arg);
-}
-
-fn main() {
-    just_print(12);
-    just_print(0.123);
-    just_print("hello world");
-}
-```
-
-我们使用“未知的类型” `T` 作为函数 `just_print` 的参数类型，使得我们可以在 `main` 函数里给 `just_print` 函数传递各种各样类型的数据来打印。
-
-注意，在定义 `T` 时，我们写的是 `T: std::fmt::Display`，这是在用 Trait 来限制泛型，即，必须是实现了 `std::fmt::Display` 这个 Trait 的类型才能被传递给 `just_print` 作参数。
-
-除了函数之外，泛型也可以被用在结构体和 Trait 定义上。比如，如果我们要给类型实现加法，就需要让类型实现 `std::ops::Add` 这个 Trait，该 Trait 的简化定义为：
-
-```rust
-pub trait Add<Rhs = Self> {
-    type Output;
-    fn add(self, rhs: Rhs) -> Self::Output;
-}
-```
-
-我们可以这样来使用：
-
-```rust
-impl std::ops::Add for MyStruct {
-    type Output = Self;
-    fn add(self, rhs: Self) -> Self::Output {
-        Self { num : self.num + rhs.num }
-    }
-}
-
-impl std::ops::Add<YourStruct> for MyStruct {
-    type Output = HisStruct;
-    fn add(self, rhs: YourStruct) -> Self::Output {
-        HisStruct { num : self.num + rhs.num }
-    }
-}
-```
-
-有关泛型更详细的介绍请参考相关书籍，这里仅列出基本概念以方便后面探讨 `Fn` Traits。
 
 ## `Fn` Traits
 
