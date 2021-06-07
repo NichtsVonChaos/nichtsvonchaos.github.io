@@ -32,7 +32,7 @@ println!("{}", add_delta(15));
 
 以上例子将在控制台输出 `20`。
 
-那么闭包的类型是什么呢？如果你借助 rust-analyzer 或者其他工具的自动类型推导，它可能会告诉你 `just_print` 的类型是 `|i32| -> ()`，但是你会发现，如果你把这个类型写到代码里：
+那么闭包的类型是什么呢？如果你借助 rust-analyzer 或者其他工具的自动类型推导，它可能会告诉你 `just_print` 的类型是 `|i32| -> ()`{:.language-rust}，但是你会发现，如果你把这个类型写到代码里：
 
 ```rust
 let just_print: |i32| -> () = |num| println!("{}", num);
@@ -48,7 +48,7 @@ just_print = |num| println!("{}", num);
 Rust 编译器会明确的告诉你两个闭包的类型不同，即使他们有着完全一样的定义。
 
 {% raw %}
-如果使用 std 库函数中的 `std::any::type_name::<T>()` 来输出闭包的类型，你会得到 `crate_name::function_name::{{closure}}`。显然这也不是闭包的真实类型。
+如果使用 std 库函数中的 `std::any::type_name::<T>()`{:.language-rust} 来输出闭包的类型，你会得到 `crate_name::function_name::{{closure}}`。显然这也不是闭包的真实类型。
 {% endraw %}
 
 那么闭包究竟是什么类型呢？事实上，闭包的类型是在编译期间生成的独一无二的结构体。关于更详细的内容，我们将在后面探讨。
@@ -68,7 +68,7 @@ pub trait FnOnce<Args> {
 }
 ```
 
-着重看到 `call_once(self, args: Args)`这里，它的第一个参数类型为 `self`，这意味着它将夺取该对象（函数或闭包）的所有权。
+着重看到 `fn call_once(self, args: Args)`{:.language-rust} 这里，它的第一个参数类型为 `self`{:.language-rust}，这意味着它将夺取该对象（函数或闭包）的所有权。
 
 对于下面这种类型的闭包，编译器只会为它实现 `FnOnce` Trait：
 
@@ -89,7 +89,7 @@ pub trait FnMut<Args>: FnOnce<Args> {
 }
 ```
 
-注意，`trait FnMut<Args>: FnOnce<Args>` 表示在实现 `FnMut` 之前必须先给类型实现 `FnOnce`，因此，实现了 `FnMut` 的类型必定实现了 `FnOnce`。
+注意，`trait FnMut<Args>: FnOnce<Args>`{:.language-rust} 表示在实现 `FnMut` 之前必须先给类型实现 `FnOnce`，因此，实现了 `FnMut` 的类型必定实现了 `FnOnce`。
 
 **任何一个函数都实现了 `FnMut`**。对于闭包，如果闭包可以仅通过可变引用，而不是获取其所有权的方式访问上下文变量，则编译器会为该闭包实现 `FnMut`。例如，下面的例子中，闭包会实现 `FnMut` 并可以多次调用：
 
@@ -113,7 +113,7 @@ pub trait Fn<Args>: FnMut<Args> {
 }
 ```
 
-注意，`trait Fn<Args>: FnMut<Args>` 表示在实现 `Fn` 之前必须先给类型实现 `FnMut`，因此，实现了 `Fn` 的类型必定实现了 `FnMut` 和 `FnOnce`。
+注意，`trait Fn<Args>: FnMut<Args>`{:.language-rust} 表示在实现 `Fn` 之前必须先给类型实现 `FnMut`，因此，实现了 `Fn` 的类型必定实现了 `FnMut` 和 `FnOnce`。
 
 **任何一个函数都实现了 `Fn`**。对于闭包，如果闭包可以仅通过不可变引用的方式访问上下文变量，则编译器会为该闭包实现 `Fn`。例如，在下面的例子中，闭包会实现 `Fn` 并可以多次调用：
 
@@ -198,7 +198,7 @@ vec_push(5);
 vec.push(6);
 ```
 
-`vec.push(6)` 就会报错，提示你 `` borrow of moved value: `vec` ``。在第一个例子中，闭包在其结构体中只储存 `vec` 的可变引用，而在第二个例子中，闭包会转移 `vec` 的所有权保存在自己的结构体中。
+`vec.push(6)`{:.language-rust} 就会报错，提示你 `` borrow of moved value: `vec` ``。在第一个例子中，闭包在其结构体中只储存 `vec` 的可变引用，而在第二个例子中，闭包会转移 `vec` 的所有权保存在自己的结构体中。
 
 > 值得注意的是，由于此时闭包的结构体持有 `vec` 而不是持有它的不可变引用，因此**闭包不会自动实现 `Copy`**，除非被 `move` 的类型实现了 `Copy` 闭包才会自动实现 `Copy`。
 
@@ -257,7 +257,7 @@ just_print(2);
 
 ### 定义结构体
 
-我们只需要 `vec` 的不可变引用即可，因此我们的闭包类型是一个需要实现 `Fn` 的结构体。我们定义如下结构体来储存一个 `&Vec<i32>`：
+我们只需要 `vec` 的不可变引用即可，因此我们的闭包类型是一个需要实现 `Fn` 的结构体。我们定义如下结构体来储存一个 `&Vec<i32>`{:.language-rust}：
 
 ```rust
 #[derive(Copy, Clone)]
@@ -266,9 +266,9 @@ struct MyClosure<'a> {
 }
 ```
 
-注意，`'a` 在这里定义了一个生命周期给 `&Vec<i32>`，生命周期在写代码时类似于泛型参数，它可以由编译器自动推导。关于生命周期更详细的内容，请参考相关书籍。
+注意，`'a`{:.language-rust} 在这里定义了一个生命周期给 `&Vec<i32>`{:.language-rust}，生命周期在写代码时类似于泛型参数，它可以由编译器自动推导。关于生命周期更详细的内容，请参考相关书籍。
 
-`#[derive(Copy, Clone)]` 并非是必须的，但是我们要模仿闭包的行为，因此我们也给我们即将实现 `Fn` 的结构体也实现 `Copy`。
+`#[derive(Copy, Clone)]`{:.language-rust} 并非是必须的，但是我们要模仿闭包的行为，因此我们也给我们即将实现 `Fn` 的结构体也实现 `Copy`。
 
 ### 实现 Trait
 
@@ -283,11 +283,11 @@ impl<'a> FnOnce<(usize,)> for MyClosure<'a> {
 }
 ```
 
-`(usize,)` 是提供给 `FnOnce` 的泛型参数，注意有个逗号是为了表示自己是“包含一个元素的元组”而不是“一对括号加一个数据”。
+`(usize,)`{:.language-rust} 是提供给 `FnOnce` 的泛型参数，注意有个逗号是为了表示自己是“包含一个元素的元组”而不是“一对括号加一个数据”。
 
-由于我们的闭包不需要返回值，因此我们定义 `type Output = ();`。
+由于我们的闭包不需要返回值，因此我们定义 `type Output = ();`{:.language-rust}。
 
-`extern "rust-call"` 是一种定义将接收的元组扩展为函数参数调用的 ABI，我们可以不去理会它，照着抄。
+`extern "rust-call"`{:.language-rust} 是一种定义将接收的元组扩展为函数参数调用的 ABI，我们可以不去理会它，照着抄。
 
 最后，我们在 `call_once` 的函数体中打印 `captured_data` 的第 `index` 个元素。
 
