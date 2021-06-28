@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-chirpy"
-  spec.version       = "4.0.1"
+  spec.version       = "4.0.2"
   spec.authors       = ["Cotes Chung"]
   spec.email         = ["cotes.chung@gmail.com"]
 
@@ -22,6 +22,8 @@ Gem::Specification.new do |spec|
     "wiki_uri"          => "https://github.com/cotes2020/jekyll-theme-chirpy/wiki",
     "plugin_type"       => "theme"
   }
+
+  spec.required_ruby_version = [">= 2.4", "< 3.0"]
 
   spec.add_runtime_dependency "jekyll", "~> 4.1"
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1"
