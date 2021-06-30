@@ -35,8 +35,10 @@
   %}
 {% endif %}
 
+
 {% if _content contains '<img src="' %}
 
+  <!-- add CDN prefix if it exists -->
   {% if site.img_cdn != '' %}
     {% assign img_path_replacement = '<img src="' | append: site.img_cdn | append: '/' %}
   {% else %}
@@ -46,16 +48,10 @@
   {% assign _content = _content | replace: '<img src="/', img_path_replacement %}
 
   <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
-  {% assign img_placehodler
-    = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' %}
-
-  {% assign lozad_replacement = '<img src="'
-    | append: img_placehodler
-    | append: '" data-src="' %}
-
-  {% assign _content = _content | replace: '<img src="', lozad_replacement %}
+  {% assign _content = _content | replace: '<img src="', '<img data-proofer-ignore data-src="' %}
 
 {% endif %}
+
 
 <!-- return -->
 {{ _content }}
