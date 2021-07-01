@@ -70,11 +70,11 @@ google_analytics:
 
 # Valine 评论系统
 valine:
-  comments: true    # 是否启用 Valine
-  leancloud_appid: IpgOdqSXjwrACC2VyDICQNvv-MdYXbMMI    # 改为你的 LeanCloud App ID
-  leancloud_appkey: NjP7uJ8rLW0NW8jYaTmtfNvh            # 改为你的 LeanCloud App Key
+  comments: false     # 是否启用 Valine
+  leancloud_appid:    # 输入你的 LeanCloud App ID
+  leancloud_appkey:   # 输入你的 LeanCloud App Key
   placeholder: 说点什么吧！PS:在昵称栏输入QQ号可以自动获取QQ昵称和QQ头像哦~    # 空白评论框时显示的文字
-  avatar: mp        # 默认头像  › https://valine.js.org/avatar.html 
+  avatar: mp          # 默认头像  › https://valine.js.org/avatar.html 
  
 # Waline 评论系统是 Valine 的改进版本，有后端，更安全。
 # 如果选择使用 Waline，则会无视 Valine 的一切配置。
