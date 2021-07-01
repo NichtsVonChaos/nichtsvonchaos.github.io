@@ -141,7 +141,9 @@ layout: default
 
     {% include post-nav.html %}
 
-    {% if site.valine.comments and page.comments %}
+    {% if site.waline.comments and page.comments %}
+    {% include waline.html %}
+    {% elsif site.valine.comments and page.comments %}
       {% include valine.html %}
     {% endif %}
 

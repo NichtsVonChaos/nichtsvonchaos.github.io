@@ -21,7 +21,17 @@ layout: default
 
 </div>
 
-{% if site.valine.comments and page.comments %}
+{% if site.waline.comments and page.comments %}
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+      {% include waline.html %}
+
+    </div> <!-- .pl-1 pr-1 -->
+  </div> <!-- .col-12 -->
+</div> <!-- .row -->
+{% elsif site.valine.comments and page.comments %}
 <div class="row">
   <div class="col-12 col-lg-11 col-xl-8">
     <div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">

@@ -19,7 +19,9 @@
   {% endif %}
   
   {% if page.layout == 'post' %}
-    {% if site.valine.comments == true and page.comments == true %}
+    {% if site.waline.comments == true and page.comments == true %}
+    <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+    {% elsif site.valine.comments == true and page.comments == true %}
     <div id="gbk_nick"></div>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="https://cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>

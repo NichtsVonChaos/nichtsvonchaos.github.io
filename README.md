@@ -5,7 +5,7 @@
 与原版 Chirpy 不同的点：
 
 * 汉化了大部分英文。
-* 使用并入了 [#357](https://github.com/xCss/Valine/pull/357) 的 [Valine 评论系统](https://valine.js.org/)替换 Disqus，参见 `_config.yml` 里的 `valine`。
+* 使用 [Valine](https://valine.js.org/) / [Waline](https://waline.js.org/) 替换 Disqus，参见 `_config.yml` 里的 `valine` 以及 `waline`。建议优先考虑使用 Waline。
 * 使用[知乎式 404 界面](https://404.life/564.html)，可以返回首页或者返回上一页。
 * 新增了分享到 Line，QQ，QQ 空间，贴吧和微博，参见 `_data/share.yml`。
 * 使用 [iconfont](https://www.iconfont.cn/) 取代 [Font Awesome](https://fontawesome.com/)，有更多的图标选择空间，参见 `_config.yml` 里的 `iconfont_css`。
