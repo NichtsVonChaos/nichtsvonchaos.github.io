@@ -82,6 +82,8 @@ valine:
 waline:
   comments: true # 是否启用 Waline （启用将无视 Valine）
   server: https://myblog-comments.vercel.app/ # Vercal 服务端地址
+  placeholder: 说点什么吧！    # 空白评论框时显示的文字
+  avatar: mp          # 默认头像  › https://waline.js.org/guide/client/avatar.html
 
 # 设置首选配色方案
 #
