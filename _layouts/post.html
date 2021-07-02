@@ -44,15 +44,7 @@ layout: default
       <div class="post-content">
 
         {% if page.image.src %}
-          <img class="preview-img"
-            data-src="{{ page.image.src }}"
-            {% if page.image.width and page.image.height %}
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ page.image.width }} {{ page.image.height }}'%3E%3C/svg%3E"
-            {% endif %}
-            alt="{{ page.image.alt | default: "Preview Image" }}"
-            {% if page.image.width %}width="{{ page.image.width }}"{% endif %}
-            {% if page.image.height %}height="{{ page.image.height }}"{% endif %}
-            data-proofer-ignore >
+          <img src="{{ page.image.src }}" class="preview-img" alt="{{ page.image.alt | default: "Preview Image" }}">
         {% endif %}
 
         {{ content }}

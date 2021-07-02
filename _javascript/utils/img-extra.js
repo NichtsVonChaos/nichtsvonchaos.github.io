@@ -11,27 +11,10 @@ $(function() {
     return;
   }
 
-  const imgList = document.querySelectorAll(`${IMG_SCOPE} img[data-src]`);
-
-  /* preventing image reflow */
-
-  imgList.forEach(img => {
-    if (img.classList.contains("preview-img")) {
-      return;
-    }
-
-    if (img.hasAttribute("width") && img.hasAttribute("height")) {
-      const width = img.getAttribute("width");
-      const height = img.getAttribute("height");
-      let srcPlaceholder =
-        `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}"%3E%3C/svg%3E`;
-      img.setAttribute("src", srcPlaceholder);
-    }
-  });
-
   /* lozy loading */
 
-  const observer = lozad(imgList);
+  const imgs = document.querySelectorAll(`${IMG_SCOPE} img[data-src]`);
+  const observer = lozad(imgs);
   observer.observe();
 
   /* popup */

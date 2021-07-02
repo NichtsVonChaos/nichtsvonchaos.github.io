@@ -7,6 +7,7 @@
 # Usage: bash /path/to/test.sh [indicated path]
 
 DEST=_site
+URL_IGNORE=cdn.jsdelivr.net
 
 _build=false
 
@@ -61,4 +62,6 @@ fi
 bundle exec htmlproofer "$DEST" \
   --disable-external \
   --check-html \
-  --allow_hash_href
+  --empty_alt_ignore \
+  --allow_hash_href \
+  --url_ignore $URL_IGNORE
