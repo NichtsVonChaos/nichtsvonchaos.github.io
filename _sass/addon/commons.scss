@@ -107,6 +107,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 blockquote {
@@ -420,6 +421,17 @@ footer {
   overflow-wrap: break-word;
   word-wrap: break-word;
 
+  @mixin caption {
+    + em {
+      display: block;
+      text-align: center;
+      font-style: normal;
+      font-size: 80%;
+      padding: 0;
+      color: #6d6c6c;
+    }
+  }
+
   img[data-src] {
     margin: 0.5rem 0;
 
@@ -436,6 +448,9 @@ footer {
     &.shadow {
       filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
     }
+
+    @include caption;
+
   }
 
   a {
@@ -462,14 +477,7 @@ footer {
     }
 
     &.img-link {
-      + em {
-        display: block;
-        text-align: center;
-        font-style: normal;
-        font-size: 80%;
-        padding: 0;
-        color: #6d6c6c;
-      }
+      @include caption;
     }
   } // a
 
