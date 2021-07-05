@@ -110,7 +110,7 @@ code {
   hyphens: none;
 
   &.highlighter-rouge {
-    font-size: $code-font-size;
+    // font-size: $code-font-size;
     padding: 3px 5px;
     border-radius: 4px;
     background-color: var(--inline-code-bg);
