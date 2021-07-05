@@ -372,6 +372,59 @@ fn main() {
 
 编译，运行，控制台成功输出了120。
 
+### 尝鲜：未稳定的 `Fn` Traits
+
+关于 `Fn` Traits，可以阅读我的另一篇博客 [Rust 中函数与闭包与 Fn Traits 探讨](https://nihil.cc/posts/rust_fn_traits/)，我们可以通过给 `Func` 实现 `Fn` Traits 来模拟函数调用，以省略 `call`。
+
+```rust
+// Fn Traits 未稳定，需要使用 feature 引入
+#![feature(unboxed_closures, fn_traits)]
+
+struct Func<'a, A, F>(&'a dyn Fn(Func<'a, A, F>, A) -> F);
+
+impl<'a, A, F> Clone for Func<'a, A, F> {
+    fn clone(&self) -> Self {
+        Self(self.0)
+    }
+}
+
+impl<'a, A, F> Copy for Func<'a, A, F> {}
+
+// 实现 Fn Traits
+impl<'a, A, F> FnOnce<(Func<'a, A, F>, A)> for Func<'a, A, F> {
+    type Output = F;
+    extern "rust-call" fn call_once(self, (f, x): (Func<'a, A, F>, A)) -> Self::Output {
+        (self.0)(f, x)
+    }
+}
+
+impl<'a, A, F> FnMut<(Func<'a, A, F>, A)> for Func<'a, A, F> {
+    extern "rust-call" fn call_mut(&mut self, (f, x): (Func<'a, A, F>, A)) -> Self::Output {
+        (self.0)(f, x)
+    }
+}
+
+impl<'a, A, F> Fn<(Func<'a, A, F>, A)> for Func<'a, A, F> {
+    extern "rust-call" fn call(&self, (f, x): (Func<'a, A, F>, A)) -> Self::Output {
+        (self.0)(f, x)
+    }
+}
+
+fn y<A, R>(g: impl Fn(&dyn Fn(A) -> R, A) -> R) -> impl Fn(A) -> R {
+    move |x| (|f: Func<A, R>, x| f(f, x))(Func(&|f, x| g(&|x| f(f, x), x)), x)
+}
+
+fn main() {
+    let g = |f: &dyn Fn(usize) -> usize, x| match x {
+        0 => 1,
+        _ => x * f(x - 1),
+    };
+    
+    let fact = y(g);
+    println!("{}", fact(5));
+}
+```
+
 ## 参考
 
 [如何在Rust中写Y组合子？ - Nugine的回答 - 知乎](https://www.zhihu.com/question/266186457/answer/1062284485)
