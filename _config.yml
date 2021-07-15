@@ -44,7 +44,7 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: dr-ktF8m84-3Bgb1D5faBkWAeXF_7FJYGuvyQFr9GXY # 改为你的 Google 认证字符串
+google_site_verification:  # 你的 Google 认证字符串
 # --------------------------
 
 # 自定义 Iconfont 的图标链接。 › https://www.iconfont.cn/
